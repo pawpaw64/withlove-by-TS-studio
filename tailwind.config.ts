@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
         body: ['"Lora"', 'serif'],
+        satisfy: ['"Satisfy"', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",
