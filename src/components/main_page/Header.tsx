@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const navLinks = ["Home", "Tutorials", "Gallery", "About"];
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Tutorials", href: "/#posts" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "About", href: "/#subscribe" },
+];
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
