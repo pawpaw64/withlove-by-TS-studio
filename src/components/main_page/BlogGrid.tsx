@@ -56,9 +56,9 @@ const BlogGrid = () => {
     <section id="posts" className="container mx-auto px-4 py-16 md:py-24">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
-          Latest Posts
+          Explore Macrame Pieces
         </h2>
-        <p className="text-muted-foreground font-body max-w-lg mx-auto">
+        <p className="text-muted-foreground font-body italic max-w-lg mx-auto">
           Tutorials, inspiration, and everything macrame
         </p>
       </div>
