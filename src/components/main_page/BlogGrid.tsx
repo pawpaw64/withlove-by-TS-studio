@@ -2,7 +2,20 @@ import BlogCard from "./BlogCard";
 import { posts } from "@/data/posts";
 
 const BlogGrid = () => {
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -200 : 200,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
+<<<<<<< HEAD
     <section id="posts" className="container mx-auto px-4 py-16 md:py-16">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
