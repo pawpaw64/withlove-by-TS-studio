@@ -45,6 +45,16 @@ const CategoryCircle = ({ category, isActive, onClick, linkTo }: CategoryCircleP
       >
         {category.label}
       </span>
+    </div>
+  );
+
+  if (linkTo) {
+    return <Link to={linkTo}>{content}</Link>;
+  }
+
+  return (
+    <button onClick={() => onClick?.(category.id)} className="cursor-pointer">
+      {content}
     </button>
   );
 };
