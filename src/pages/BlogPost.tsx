@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowLeft, BookOpen, Wrench, ListOrdered, Lightbulb } from "lucide-react";
+import { ArrowLeft, BookOpen, Wrench, ListOrdered, Lightbulb, Clock, BarChart3, Play } from "lucide-react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
-import type { Post } from "@/types/post";
+import type { Post, TutorialStep, VideoTutorial } from "@/types/post";
 
 interface PostFile {
   title?: string;
@@ -12,7 +12,18 @@ interface PostFile {
   category?: string;
   date?: string;
   image?: string;
+  difficulty?: string;
+  timeEstimate?: string;
+  materials?: string[];
+  steps?: TutorialStep[];
+  tips?: string[];
+  videoTutorials?: VideoTutorial[];
   body?: unknown;
+}
+
+function extractYouTubeId(url: string): string | null {
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([\w-]{11})/);
+  return match ? match[1] : null;
 }
 
 const modules = import.meta.glob<PostFile>("../../content/posts/*.json", {
@@ -86,6 +97,12 @@ function getPost(slug: string | undefined): Post | undefined {
         category: data.category ?? "",
         date: data.date ?? "",
         image: data.image ?? "",
+        difficulty: data.difficulty,
+        timeEstimate: data.timeEstimate,
+        materials: data.materials,
+        steps: data.steps,
+        tips: data.tips,
+        videoTutorials: data.videoTutorials,
         body: data.body,
       };
     }
@@ -147,10 +164,114 @@ const BlogPost = () => {
         </div>
 
         <div className="container mx-auto px-4 py-12 max-w-4xl">
+          {/* Difficulty & Time badges */}
+          {(post.difficulty || post.timeEstimate) && (
+            <div className="flex flex-wrap gap-3 mb-8">
+              {post.difficulty && (
+                <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-medium" style={{ background: "hsl(var(--bp-card))", color: "hsl(var(--bp-accent-strong))", border: "1.5px solid hsl(var(--bp-border))" }}>
+                  <BarChart3 size={15} /> {post.difficulty}
+                </span>
+              )}
+              {post.timeEstimate && (
+                <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-medium" style={{ background: "hsl(var(--bp-card))", color: "hsl(var(--bp-accent-strong))", border: "1.5px solid hsl(var(--bp-border))" }}>
+                  <Clock size={15} /> {post.timeEstimate}
+                </span>
+              )}
+            </div>
+          )}
+
           {/* Intro */}
           {intro.children.length > 0 && (
             <div className="prose prose-lg max-w-none font-body mb-10 prose-headings:font-display" style={{ color: "hsl(var(--bp-muted))" }}>
               <TinaMarkdown content={intro as Parameters<typeof TinaMarkdown>[0]["content"]} />
+            </div>
+          )}
+
+          {/* Materials */}
+          {post.materials && post.materials.length > 0 && (
+            <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
+              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+                <Wrench size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Materials Needed
+              </h3>
+              <ul className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>
+                {post.materials.map((m, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(var(--bp-accent-strong))" }} />
+                    {m}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Tutorial Steps */}
+          {post.steps && post.steps.length > 0 && (
+            <div className="mb-8">
+              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-5" style={{ color: "hsl(var(--bp-fg))" }}>
+                <ListOrdered size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Step-by-Step Tutorial
+              </h3>
+              <div className="space-y-5">
+                {post.steps.map((step, i) => (
+                  <div key={i} className="rounded-2xl p-5 flex gap-4" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full shrink-0 text-sm font-bold text-white" style={{ background: "hsl(var(--bp-accent-strong))" }}>
+                      {i + 1}
+                    </span>
+                    <div className="flex-1">
+                      <h4 className="font-display font-semibold mb-1" style={{ color: "hsl(var(--bp-fg))" }}>{step.title}</h4>
+                      <p className="font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>{step.description}</p>
+                      {step.image && (
+                        <img src={step.image} alt={step.title} className="mt-3 rounded-xl w-full max-h-64 object-cover" />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Tips */}
+          {post.tips && post.tips.length > 0 && (
+            <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-accent) / 0.15)", border: "1.5px solid hsl(var(--bp-border))" }}>
+              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+                <Lightbulb size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Tips & Tricks
+              </h3>
+              <ul className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>
+                {post.tips.map((tip, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(var(--bp-accent-strong))" }} />
+                    {tip}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Video Tutorials */}
+          {post.videoTutorials && post.videoTutorials.length > 0 && (
+            <div className="mb-8">
+              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-5" style={{ color: "hsl(var(--bp-fg))" }}>
+                <Play size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Video Tutorials
+              </h3>
+              <div className="grid gap-5">
+                {post.videoTutorials.map((vid, i) => {
+                  const videoId = extractYouTubeId(vid.youtubeUrl);
+                  if (!videoId) return null;
+                  return (
+                    <div key={i} className="rounded-2xl overflow-hidden" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
+                      <div className="aspect-video">
+                        <iframe
+                          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                          title={vid.title}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          className="w-full h-full"
+                        />
+                      </div>
+                      <p className="px-5 py-3 font-display font-semibold text-sm" style={{ color: "hsl(var(--bp-fg))" }}>{vid.title}</p>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
 

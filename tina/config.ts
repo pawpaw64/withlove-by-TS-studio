@@ -56,6 +56,75 @@ export default defineConfig({
             label: "Cover Image",
           },
           {
+            type: "string",
+            name: "difficulty",
+            label: "Difficulty",
+            options: ["Beginner", "Intermediate", "Advanced"],
+          },
+          {
+            type: "string",
+            name: "timeEstimate",
+            label: "Time Estimate",
+            description: "e.g. 2-3 hours",
+          },
+          {
+            type: "string",
+            name: "materials",
+            label: "Materials",
+            list: true,
+            description: "One material per line",
+          },
+          {
+            type: "object",
+            name: "steps",
+            label: "Tutorial Steps",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Step Title",
+              },
+              {
+                type: "string",
+                name: "description",
+                label: "Step Description",
+                ui: { component: "textarea" },
+              },
+              {
+                type: "image",
+                name: "image",
+                label: "Step Image (optional)",
+              },
+            ],
+          },
+          {
+            type: "string",
+            name: "tips",
+            label: "Tips",
+            list: true,
+            description: "One tip per line",
+          },
+          {
+            type: "object",
+            name: "videoTutorials",
+            label: "Video Tutorials",
+            list: true,
+            fields: [
+              {
+                type: "string",
+                name: "title",
+                label: "Video Title",
+              },
+              {
+                type: "string",
+                name: "youtubeUrl",
+                label: "YouTube URL",
+                description: "Full YouTube URL, e.g. https://www.youtube.com/watch?v=...",
+              },
+            ],
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
