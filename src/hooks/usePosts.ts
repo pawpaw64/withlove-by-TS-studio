@@ -7,6 +7,7 @@ interface PostFile {
   category?: string;
   date?: string;
   image?: string;
+  galleryImages?: string[];
   body?: unknown;
 }
 
@@ -33,6 +34,7 @@ export function usePosts(): Post[] {
       category: catLabel,
       date: data.date ?? "",
       image: data.image ?? "",
+      galleryImages: data.galleryImages,
       body: data.body,
     });
   }

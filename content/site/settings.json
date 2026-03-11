@@ -8,6 +8,13 @@
   "blogSectionSubtitle": "Browse by category or discover our featured works",
   "footerDescription": "Handcrafted macrame art and tutorials. Every knot tied with love and care.",
   "facebookUrl": "https://www.facebook.com/withlovebyts",
+  "socialLinks": [
+    {
+      "platform": "Facebook",
+      "label": "withlovebyts",
+      "url": "https://www.facebook.com/withlovebyts"
+    }
+  ],
   "newsletterTitle": "Subscribe to Newsletter",
   "newsletterDescription": "Get macrame tips and new patterns delivered to your inbox.",
   "emailPlaceholder": "tsum64@gmail.com",

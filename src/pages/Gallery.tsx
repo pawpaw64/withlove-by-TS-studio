@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
@@ -67,6 +67,11 @@ const Gallery = () => {
                 <h3 className="font-display text-lg text-primary-foreground font-semibold">
                   {item.title}
                 </h3>
+                {item.source === "post" && (
+                  <span className="inline-flex items-center gap-1 text-[10px] font-body text-primary-foreground/60 mt-1">
+                    <FileText size={10} /> from blog post
+                  </span>
+                )}
               </div>
             </div>
           ))}
@@ -80,11 +85,29 @@ const Gallery = () => {
           onClick={() => setLightboxIndex(null)}
         >
           <button
-            className="absolute top-6 right-6 text-primary-foreground hover:text-primary transition-colors"
+            className="absolute top-6 right-6 text-primary-foreground hover:text-primary transition-colors z-10"
             onClick={() => setLightboxIndex(null)}
           >
             <X size={32} />
           </button>
+
+          {filtered.length > 1 && (
+            <>
+              <button
+                className="absolute left-4 text-primary-foreground/70 hover:text-primary-foreground transition-colors z-10"
+                onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + filtered.length) % filtered.length); }}
+              >
+                <ChevronLeft size={36} />
+              </button>
+              <button
+                className="absolute right-4 text-primary-foreground/70 hover:text-primary-foreground transition-colors z-10"
+                onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % filtered.length); }}
+              >
+                <ChevronRight size={36} />
+              </button>
+            </>
+          )}
+
           <img
             src={filtered[lightboxIndex].image}
             alt={filtered[lightboxIndex].title}
@@ -96,6 +119,17 @@ const Gallery = () => {
               {filtered[lightboxIndex].title}
             </h3>
             <span className="text-sm text-peach font-body">{filtered[lightboxIndex].category}</span>
+            {filtered[lightboxIndex].source === "post" && filtered[lightboxIndex].postSlug && (
+              <Link
+                to={`/post/${filtered[lightboxIndex].postSlug}`}
+                className="flex items-center justify-center gap-1 mt-2 text-xs text-primary-foreground/70 hover:text-primary-foreground transition-colors font-body"
+              >
+                <FileText size={12} /> View blog post
+              </Link>
+            )}
+            <span className="block mt-1 text-xs text-primary-foreground/40 font-body">
+              {lightboxIndex + 1} / {filtered.length}
+            </span>
           </div>
         </div>
       )}

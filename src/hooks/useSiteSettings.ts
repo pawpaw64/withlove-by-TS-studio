@@ -3,6 +3,12 @@ interface FooterLink {
   href: string;
 }
 
+export interface SocialLink {
+  platform: string;
+  label: string;
+  url: string;
+}
+
 interface SiteSettings {
   brandName: string;
   heroImage: string;
@@ -13,6 +19,7 @@ interface SiteSettings {
   blogSectionSubtitle: string;
   footerDescription: string;
   facebookUrl: string;
+  socialLinks: SocialLink[];
   newsletterTitle: string;
   newsletterDescription: string;
   emailPlaceholder: string;
@@ -39,6 +46,7 @@ export function useSiteSettings(): SiteSettings {
       blogSectionSubtitle: "",
       footerDescription: "",
       facebookUrl: "",
+      socialLinks: [],
       newsletterTitle: "Subscribe to Newsletter",
       newsletterDescription: "",
       emailPlaceholder: "",

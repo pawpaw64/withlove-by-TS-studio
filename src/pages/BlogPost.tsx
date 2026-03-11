@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
-import { ArrowLeft, BookOpen, Wrench, ListOrdered, Lightbulb, Clock, BarChart3, Play } from "lucide-react";
+import { ArrowLeft, BookOpen, Wrench, ListOrdered, Lightbulb, Clock, BarChart3, Play, Images, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
@@ -18,6 +18,7 @@ interface PostFile {
   steps?: TutorialStep[];
   tips?: string[];
   videoTutorials?: VideoTutorial[];
+  galleryImages?: string[];
   body?: unknown;
 }
 
@@ -103,6 +104,7 @@ function getPost(slug: string | undefined): Post | undefined {
         steps: data.steps,
         tips: data.tips,
         videoTutorials: data.videoTutorials,
+        galleryImages: data.galleryImages,
         body: data.body,
       };
     }
@@ -114,6 +116,9 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = getPost(slug);
   const [openSection, setOpenSection] = useState<number>(0);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  const galleryImages = post.galleryImages?.filter(Boolean) ?? [];
 
   if (!post) {
     return (
@@ -163,7 +168,10 @@ const BlogPost = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <div className="container mx-auto px-4 py-12 max-w-6xl">
+         <div className={galleryImages.length > 0 ? "flex flex-col lg:flex-row gap-8" : ""}>
+          {/* Main content */}
+          <div className={galleryImages.length > 0 ? "flex-1 min-w-0" : "max-w-4xl mx-auto w-full"}>
           {/* Difficulty & Time badges */}
           {(post.difficulty || post.timeEstimate) && (
             <div className="flex flex-wrap gap-3 mb-8">
@@ -332,7 +340,78 @@ const BlogPost = () => {
               <ArrowLeft size={16} /> Back to All Posts
             </Link>
           </div>
+          </div>{/* end main content */}
+
+          {/* Side Gallery */}
+          {galleryImages.length > 0 && (
+            <aside className="lg:w-72 xl:w-80 shrink-0">
+              <div className="lg:sticky lg:top-8">
+                <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+                  <Images size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Gallery
+                </h3>
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
+                  {galleryImages.map((img, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setLightboxIndex(i)}
+                      className="rounded-xl overflow-hidden transition-transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-offset-2"
+                      style={{ border: "1.5px solid hsl(var(--bp-border))", focusRingColor: "hsl(var(--bp-accent-strong))" } as React.CSSProperties}
+                    >
+                      <img src={img} alt={`Gallery image ${i + 1}`} className="w-full h-32 lg:h-40 object-cover" loading="lazy" />
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </aside>
+          )}
+         </div>{/* end flex row */}
         </div>
+
+        {/* Lightbox overlay */}
+        {lightboxIndex !== null && galleryImages.length > 0 && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            onClick={() => setLightboxIndex(null)}
+          >
+            <button
+              onClick={() => setLightboxIndex(null)}
+              className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors z-10"
+              aria-label="Close lightbox"
+            >
+              <X size={28} />
+            </button>
+
+            {galleryImages.length > 1 && (
+              <>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length); }}
+                  className="absolute left-4 text-white/80 hover:text-white transition-colors z-10"
+                  aria-label="Previous image"
+                >
+                  <ChevronLeft size={36} />
+                </button>
+                <button
+                  onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % galleryImages.length); }}
+                  className="absolute right-4 text-white/80 hover:text-white transition-colors z-10"
+                  aria-label="Next image"
+                >
+                  <ChevronRight size={36} />
+                </button>
+              </>
+            )}
+
+            <img
+              src={galleryImages[lightboxIndex]}
+              alt={`Gallery image ${lightboxIndex + 1}`}
+              className="max-h-[85vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            <span className="absolute bottom-4 text-white/60 text-sm font-body">
+              {lightboxIndex + 1} / {galleryImages.length}
+            </span>
+          </div>
+        )}
 
         <Footer />
       </div>

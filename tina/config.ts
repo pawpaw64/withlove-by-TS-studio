@@ -125,6 +125,13 @@ export default defineConfig({
             ],
           },
           {
+            type: "image",
+            name: "galleryImages",
+            label: "Gallery Images",
+            list: true,
+            description: "Additional images shown in a side gallery on the post page",
+          },
+          {
             type: "rich-text",
             name: "body",
             label: "Body",
@@ -210,7 +217,33 @@ export default defineConfig({
           {
             type: "string",
             name: "facebookUrl",
-            label: "Facebook URL",
+            label: "Facebook URL (legacy)",
+            description: "Kept for backwards-compat. Prefer Social Links below.",
+          },
+          {
+            type: "object",
+            name: "socialLinks",
+            label: "Social / Contact Links",
+            list: true,
+            description: "Links shown in the Contact popup (Facebook, Instagram, etc.)",
+            fields: [
+              {
+                type: "string",
+                name: "platform",
+                label: "Platform",
+                options: ["Facebook", "Instagram", "TikTok", "YouTube", "WhatsApp", "Email", "Website"],
+              },
+              {
+                type: "string",
+                name: "label",
+                label: "Display Label",
+              },
+              {
+                type: "string",
+                name: "url",
+                label: "URL",
+              },
+            ],
           },
           {
             type: "string",
@@ -384,6 +417,62 @@ export default defineConfig({
               { label: "Tall (2 rows)", value: "row-span-2" },
               { label: "Wide (2 columns)", value: "col-span-2" },
             ],
+          },
+        ],
+      },
+      {
+        name: "galleryBulk",
+        label: "Gallery Bulk Import",
+        path: "content/gallery-bulk",
+        format: "json",
+        ui: {
+          filename: {
+            slugify: (values) =>
+              (values?.folderName ?? "batch")
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, "-")
+                .replace(/(^-|-$)/g, ""),
+          },
+        },
+        fields: [
+          {
+            type: "string",
+            name: "folderName",
+            label: "Folder / Batch Name",
+            isTitle: true,
+            required: true,
+            description:
+              "A descriptive name for this group of images (e.g. 'Wall Art – March 2026')",
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category (applies to all images below)",
+            options: [
+              "Wall Art",
+              "Plant Hangers",
+              "Home Decor",
+              "Accessories",
+              "Custom Orders",
+            ],
+          },
+          {
+            type: "string",
+            name: "defaultGridSpan",
+            label: "Default Grid Size",
+            options: [
+              { label: "Normal", value: "" },
+              { label: "Tall (2 rows)", value: "row-span-2" },
+              { label: "Wide (2 columns)", value: "col-span-2" },
+            ],
+          },
+          {
+            type: "image",
+            name: "images",
+            label: "Images",
+            list: true,
+            description:
+              "Select multiple images. All will share the category above — no need to categorize one by one.",
           },
         ],
       },

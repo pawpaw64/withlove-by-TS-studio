@@ -11,7 +11,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "scan-uploads": "node scripts/scan-uploads.mjs",
+    "scan-uploads:generate": "node scripts/scan-uploads.mjs --generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -22,6 +22,7 @@ export interface Post {
   steps?: TutorialStep[];
   tips?: string[];
   videoTutorials?: VideoTutorial[];
+  galleryImages?: string[];
   body?: unknown;
 }
 
