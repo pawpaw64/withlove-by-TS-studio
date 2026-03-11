@@ -4,68 +4,11 @@
   "category": "content/categories/keychains",
   "date": "2026-03-08T00:00:00.000Z",
   "image": "/uploads/blog-1.jpg",
-  "body": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "Macrame wall hangings are one of the most rewarding beginner projects. They combine simple knots into beautiful patterns that can transform any wall into a boho masterpiece." }]
-      },
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "In this tutorial, we'll walk through the essential knots — the lark's head, square knot, and spiral knot — and combine them into a stunning wall hanging you'll be proud to display." }]
-      },
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "The beauty of macrame is in its simplicity. With just a few basic techniques, you can create intricate-looking designs that are actually quite straightforward once you get the rhythm." }]
-      },
-      {
-        "type": "h2",
-        "children": [{ "type": "text", "text": "Materials Needed" }]
-      },
-      {
-        "type": "ul",
-        "children": [
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "4mm natural cotton rope (50m)" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Wooden dowel (40cm)" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Scissors" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Measuring tape" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Comb or brush" }] }] }
-        ]
-      },
-      {
-        "type": "p",
-        "children": [
-          { "type": "text", "text": "Finished Size: 40cm wide × 60cm long | Difficulty: Beginner | Time: 3-4 hours", "bold": true }
-        ]
-      },
-      {
-        "type": "h2",
-        "children": [{ "type": "text", "text": "Step-by-Step Tutorial" }]
-      },
-      {
-        "type": "ol",
-        "children": [
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Cut 16 strands of rope, each 2.5m long. Fold each strand in half and attach to the dowel using a lark's head knot." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Starting from the left, take 4 strands and create a row of square knots across the entire piece." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "For the second row, skip the first 2 strands and create offset square knots to form a diamond pattern." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Continue alternating rows for about 15cm to create a beautiful net-like pattern." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Create a gathering knot in the center using a separate piece of rope to add visual interest." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Trim the fringe at an angle or V-shape. Use a comb to brush out the rope ends for a soft, textured finish." }] }] }
-        ]
-      },
-      {
-        "type": "h2",
-        "children": [{ "type": "text", "text": "Tips & Tricks" }]
-      },
-      {
-        "type": "ul",
-        "children": [
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Use a clipboard or tape the dowel to a surface to keep it steady while you work." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Keep your knots consistent in tension for a professional-looking result." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Natural cotton rope is easiest to work with and gives the most beautiful fringe when combed out." }] }] }
-        ]
-      }
-    ]
-  }
+  "difficulty": "Beginner",
+  "timeEstimate": ".5",
+  "materials": [
+    "2mm cotton cord",
+    "ring"
+  ],
+  "body": "\\[object Object]\n"
 }
