@@ -19,14 +19,8 @@ const BlogGrid = () => {
   };
 
   return (
-<<<<<<< HEAD
     <section id="posts" className="container mx-auto px-4 py-16 md:py-16">
       <div className="text-center mb-12">
-=======
-    <section id="posts" className="container mx-auto px-4 py-16 md:py-24">
-      {/* Section heading */}
-      <div className="text-center mb-10">
->>>>>>> c896130b77ad1a74417d481a6e4d6b8cbec91b81
         <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
           Explore Macrame Pieces
         </h2>
