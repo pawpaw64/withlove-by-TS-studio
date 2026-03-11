@@ -26,10 +26,10 @@ export interface Post {
   body?: unknown;
 }
 
+/** A category from content/categories/*.json */
 export interface Category {
+  /** Filename without .json — used for reference matching */
   id: string;
   label: string;
   image: string;
-  /** raw filename (without .json) for reference matching */
-  _filename?: string;
 }

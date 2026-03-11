@@ -4,14 +4,19 @@ import { Link } from "react-router-dom";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
 import { useGalleryItems } from "@/hooks/useGalleryItems";
+import { useCategories } from "@/hooks/useCategories";
 
 const Gallery = () => {
   const galleryItems = useGalleryItems();
+  const categories = useCategories();
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  const categories = ["All", ...Array.from(new Set(galleryItems.map(i => i.category)))];
-  const filtered = activeCategory === "All" ? galleryItems : galleryItems.filter(i => i.category === activeCategory);
+  const categoryLabels = ["All", ...categories.map((c) => c.label)];
+  const filtered =
+    activeCategory === "All"
+      ? galleryItems
+      : galleryItems.filter((i) => i.category === activeCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -28,7 +33,7 @@ const Gallery = () => {
 
         {/* Category filter pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {categories.map(cat => (
+          {categoryLabels.map(cat => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}

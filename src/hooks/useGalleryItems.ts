@@ -1,4 +1,5 @@
 import { usePosts } from "./usePosts";
+import { resolveCategory } from "@/lib/categories";
 
 export interface GalleryItem {
   title: string;
@@ -6,69 +7,42 @@ export interface GalleryItem {
   image: string;
   gridSpan: string;
   /** Where this item came from */
-  source?: "manual" | "bulk" | "post";
+  source: "gallery" | "post";
   /** If source is "post", the slug of that post */
   postSlug?: string;
 }
 
-/* ── 1. Manual gallery items (content/gallery/*.json) ── */
+/* ── Manual gallery items (content/gallery/*.json) ── */
 
-const manualModules = import.meta.glob<GalleryItem>(
+interface GalleryFile {
+  title?: string;
+  category?: string; // TinaCMS reference path
+  image?: string;
+  gridSpan?: string;
+}
+
+const galleryModules = import.meta.glob<GalleryFile>(
   "../../content/gallery/*.json",
-  { eager: true, import: "default" }
+  { eager: true, import: "default" },
 );
 
-/* ── 2. Bulk-import batches (content/gallery-bulk/*.json) ── */
-
-interface BulkGalleryFile {
-  folderName?: string;
-  category?: string;
-  defaultGridSpan?: string;
-  images?: string[];
-}
-
-const bulkModules = import.meta.glob<BulkGalleryFile>(
-  "../../content/gallery-bulk/*.json",
-  { eager: true, import: "default" }
-);
-
-/* ── helper: derive a human title from a filename ── */
-
-function titleFromPath(imgPath: string): string {
-  const name = imgPath.split("/").pop()?.replace(/\.\w+$/, "") ?? "";
-  return name
-    .replace(/[-_]+/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-}
-
-/* ── hook ── */
+/* ── Hook ── */
 
 export function useGalleryItems(): GalleryItem[] {
   const posts = usePosts();
 
   // --- source 1: manual gallery entries ---
-  const manual: GalleryItem[] = Object.values(manualModules).map((item) => ({
-    ...item,
-    source: "manual" as const,
-  }));
+  const manual: GalleryItem[] = Object.values(galleryModules)
+    .filter(Boolean)
+    .map((item) => ({
+      title: item.title ?? "",
+      category: resolveCategory(item.category),
+      image: item.image ?? "",
+      gridSpan: item.gridSpan ?? "",
+      source: "gallery" as const,
+    }));
 
-  // --- source 2: bulk-import batches ---
-  const bulk: GalleryItem[] = [];
-  for (const data of Object.values(bulkModules)) {
-    if (!data?.images?.length) continue;
-    for (const img of data.images) {
-      if (!img) continue;
-      bulk.push({
-        title: titleFromPath(img),
-        category: data.category || "Uncategorized",
-        image: img,
-        gridSpan: data.defaultGridSpan ?? "",
-        source: "bulk",
-      });
-    }
-  }
-
-  // --- source 3: blog-post images (cover + galleryImages) ---
+  // --- source 2: blog-post images (cover + galleryImages) ---
   const postItems: GalleryItem[] = [];
   for (const post of posts) {
     if (post.image) {
@@ -97,11 +71,11 @@ export function useGalleryItems(): GalleryItem[] {
     }
   }
 
-  // --- merge & deduplicate (manual wins over bulk wins over post) ---
+  // --- merge & deduplicate (gallery-first wins over post) ---
   const seen = new Set<string>();
   const result: GalleryItem[] = [];
 
-  for (const item of [...manual, ...bulk, ...postItems]) {
+  for (const item of [...manual, ...postItems]) {
     if (!item.image || seen.has(item.image)) continue;
     seen.add(item.image);
     result.push(item);

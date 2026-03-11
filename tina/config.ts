@@ -17,6 +17,29 @@ export default defineConfig({
   },
   schema: {
     collections: [
+      /* ── Categories (single source of truth) ─────────────── */
+      {
+        name: "category",
+        label: "Categories",
+        path: "content/categories",
+        format: "json",
+        fields: [
+          {
+            type: "string",
+            name: "label",
+            label: "Label",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Image",
+          },
+        ],
+      },
+
+      /* ── Posts ────────────────────────────────────────────── */
       {
         name: "post",
         label: "Posts",
@@ -120,7 +143,8 @@ export default defineConfig({
                 type: "string",
                 name: "youtubeUrl",
                 label: "YouTube URL",
-                description: "Full YouTube URL, e.g. https://www.youtube.com/watch?v=...",
+                description:
+                  "Full YouTube URL, e.g. https://www.youtube.com/watch?v=...",
               },
             ],
           },
@@ -129,7 +153,8 @@ export default defineConfig({
             name: "galleryImages",
             label: "Gallery Images",
             list: true,
-            description: "Additional images shown in a side gallery on the post page",
+            description:
+              "Additional images — shown in the post's side gallery AND automatically available in the main Gallery page.",
           },
           {
             type: "rich-text",
@@ -139,31 +164,48 @@ export default defineConfig({
           },
         ],
       },
+
+      /* ── Gallery (standalone items, same reference system as posts) ── */
       {
-        name: "category",
-        label: "Categories",
-        path: "content/categories",
+        name: "galleryItem",
+        label: "Gallery",
+        path: "content/gallery",
         format: "json",
         fields: [
           {
             type: "string",
-            name: "categoryId",
-            label: "ID",
-          },
-          {
-            type: "string",
-            name: "label",
-            label: "Label",
+            name: "title",
+            label: "Title",
             isTitle: true,
             required: true,
+          },
+          {
+            type: "reference",
+            name: "category",
+            label: "Category",
+            collections: ["category"],
+            description:
+              "Same categories used by posts — add once, available everywhere.",
           },
           {
             type: "image",
             name: "image",
             label: "Image",
           },
+          {
+            type: "string",
+            name: "gridSpan",
+            label: "Grid Size",
+            options: [
+              { label: "Normal", value: "" },
+              { label: "Tall (2 rows)", value: "row-span-2" },
+              { label: "Wide (2 columns)", value: "col-span-2" },
+            ],
+          },
         ],
       },
+
+      /* ── Site Settings ───────────────────────────────────── */
       {
         name: "siteSettings",
         label: "Site Settings",
@@ -225,13 +267,22 @@ export default defineConfig({
             name: "socialLinks",
             label: "Social / Contact Links",
             list: true,
-            description: "Links shown in the Contact popup (Facebook, Instagram, etc.)",
+            description:
+              "Links shown in the Contact popup (Facebook, Instagram, etc.)",
             fields: [
               {
                 type: "string",
                 name: "platform",
                 label: "Platform",
-                options: ["Facebook", "Instagram", "TikTok", "YouTube", "WhatsApp", "Email", "Website"],
+                options: [
+                  "Facebook",
+                  "Instagram",
+                  "TikTok",
+                  "YouTube",
+                  "WhatsApp",
+                  "Email",
+                  "Website",
+                ],
               },
               {
                 type: "string",
@@ -285,6 +336,8 @@ export default defineConfig({
           },
         ],
       },
+
+      /* ── About Page ──────────────────────────────────────── */
       {
         name: "aboutPage",
         label: "About Page",
@@ -375,104 +428,6 @@ export default defineConfig({
             type: "string",
             name: "ctaButton2Link",
             label: "CTA Button 2 Link",
-          },
-        ],
-      },
-      {
-        name: "galleryItem",
-        label: "Gallery",
-        path: "content/gallery",
-        format: "json",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "string",
-            name: "category",
-            label: "Category",
-            options: [
-              "Wall Art",
-              "Plant Hangers",
-              "Home Decor",
-              "Accessories",
-              "Custom Orders",
-            ],
-          },
-          {
-            type: "image",
-            name: "image",
-            label: "Image",
-          },
-          {
-            type: "string",
-            name: "gridSpan",
-            label: "Grid Size",
-            options: [
-              { label: "Normal", value: "" },
-              { label: "Tall (2 rows)", value: "row-span-2" },
-              { label: "Wide (2 columns)", value: "col-span-2" },
-            ],
-          },
-        ],
-      },
-      {
-        name: "galleryBulk",
-        label: "Gallery Bulk Import",
-        path: "content/gallery-bulk",
-        format: "json",
-        ui: {
-          filename: {
-            slugify: (values) =>
-              (values?.folderName ?? "batch")
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")
-                .replace(/(^-|-$)/g, ""),
-          },
-        },
-        fields: [
-          {
-            type: "string",
-            name: "folderName",
-            label: "Folder / Batch Name",
-            isTitle: true,
-            required: true,
-            description:
-              "A descriptive name for this group of images (e.g. 'Wall Art – March 2026')",
-          },
-          {
-            type: "string",
-            name: "category",
-            label: "Category (applies to all images below)",
-            options: [
-              "Wall Art",
-              "Plant Hangers",
-              "Home Decor",
-              "Accessories",
-              "Custom Orders",
-            ],
-          },
-          {
-            type: "string",
-            name: "defaultGridSpan",
-            label: "Default Grid Size",
-            options: [
-              { label: "Normal", value: "" },
-              { label: "Tall (2 rows)", value: "row-span-2" },
-              { label: "Wide (2 columns)", value: "col-span-2" },
-            ],
-          },
-          {
-            type: "image",
-            name: "images",
-            label: "Images",
-            list: true,
-            description:
-              "Select multiple images. All will share the category above — no need to categorize one by one.",
           },
         ],
       },
