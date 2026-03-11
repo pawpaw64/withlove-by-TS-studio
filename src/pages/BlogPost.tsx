@@ -345,7 +345,7 @@ const BlogPost = () => {
 
           {/* Side Gallery */}
           {galleryImages.length > 0 && (
-            <aside className="lg:w-72 xl:w-80 shrink-0">
+            <aside className="lg:w-80 xl:w-96 shrink-0">
               <div className="lg:sticky lg:top-8">
                 <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
                   <Images size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Gallery
@@ -358,7 +358,7 @@ const BlogPost = () => {
                       className="rounded-xl overflow-hidden transition-transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-offset-2"
                       style={{ border: "1.5px solid hsl(var(--bp-border))", focusRingColor: "hsl(var(--bp-accent-strong))" } as React.CSSProperties}
                     >
-                      <img src={img} alt={`Gallery image ${i + 1}`} className="w-full h-32 lg:h-40 object-cover" loading="lazy" />
+                      <img src={img} alt={`Gallery image ${i + 1}`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
                     </button>
                   ))}
                 </div>
