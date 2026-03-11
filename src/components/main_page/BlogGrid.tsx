@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BlogCard from "./BlogCard";
 import CategoryCircle from "./CategoryCircle";
@@ -12,11 +12,13 @@ const BlogGrid = () => {
   const site = useSiteSettings();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
+      const scrollAmount = 300;
       scrollRef.current.scrollBy({
-        left: direction === "left" ? -200 : 200,
+        left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
       });
     }
@@ -33,8 +35,8 @@ const BlogGrid = () => {
         </p>
       </div>
 
-      {/* Category circles - horizontal scrollable */}
-      <div className="w-full px-4 relative mb-12">
+      {/* Category circles - horizontal scrollable with floating animation */}
+      <div className="relative w-full mb-12">
         {/* Scroll buttons */}
         <button
           onClick={() => scroll("left")}
@@ -54,10 +56,12 @@ const BlogGrid = () => {
         {/* Scrollable container */}
         <div
           ref={scrollRef}
-          className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide px-4 py-2 justify-start md:justify-center"
+          className="flex gap-6 md:gap-8 overflow-x-auto scrollbar-hide px-4 py-2"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
         >
-          {/* "All" category */}
+          {/* "All" category with floating animation */}
           <button
             onClick={() => setActiveCategory(null)}
             className="flex flex-col items-center gap-2.5 group flex-shrink-0"
@@ -67,7 +71,10 @@ const BlogGrid = () => {
                 activeCategory === null
                   ? "border-primary ring-2 ring-primary ring-offset-2 ring-offset-background"
                   : "border-border group-hover:border-primary/50"
-              }`}
+              } ${!isHovering ? "animate-float" : ""}`}
+              style={{
+                animation: !isHovering ? "float 3s ease-in-out infinite" : "none",
+              }}
             >
               <span className="font-display text-lg md:text-xl font-semibold text-primary">All</span>
             </div>
@@ -80,13 +87,21 @@ const BlogGrid = () => {
             </span>
           </button>
 
-          {categories.map((cat) => (
-            <CategoryCircle
+          {categories.map((cat, index) => (
+            <div
               key={cat.id}
-              category={cat}
-              isActive={activeCategory === cat.id}
-              onClick={setActiveCategory}
-            />
+              className={`${!isHovering ? "animate-float" : ""}`}
+              style={{
+                animation: !isHovering ? `float ${3 + index * 0.2}s ease-in-out infinite` : "none",
+                animationDelay: !isHovering ? `${index * 0.15}s` : "0s",
+              }}
+            >
+              <CategoryCircle
+                category={cat}
+                isActive={activeCategory === cat.id}
+                onClick={setActiveCategory}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -120,6 +135,24 @@ const BlogGrid = () => {
             />
           ))}
       </div>
+
+      <style>{`
+        @keyframes float {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+      `}</style>
     </section>
   );
 };
