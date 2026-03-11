@@ -1,0 +1,71 @@
+{
+  "title": "Macrame Table Runner Patterns",
+  "excerpt": "Elevate your dining table with handcrafted macrame table runners. Perfect for special occasions and everyday beauty.",
+  "category": "Home Decor",
+  "date": "2026-02-20T00:00:00.000Z",
+  "image": "/uploads/blog-5.jpg",
+  "body": {
+    "type": "root",
+    "children": [
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "A macrame table runner is a statement piece that transforms your dining experience. It's a larger project that rewards patience with stunning results." }]
+      },
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "This pattern uses a combination of square knots and half-hitch knots to create a geometric diamond design." }]
+      },
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "The runner is worked flat on a board, which helps keep the pattern even and the edges straight." }]
+      },
+      {
+        "type": "h2",
+        "children": [{ "type": "text", "text": "Materials Needed" }]
+      },
+      {
+        "type": "ul",
+        "children": [
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "3mm cotton rope (100m)" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Pins" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Foam board or cork mat" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Measuring tape" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Scissors" }] }] }
+        ]
+      },
+      {
+        "type": "p",
+        "children": [
+          { "type": "text", "text": "Finished Size: 30cm wide × 150cm long | Difficulty: Intermediate | Time: 8-10 hours", "bold": true }
+        ]
+      },
+      {
+        "type": "h2",
+        "children": [{ "type": "text", "text": "Step-by-Step Tutorial" }]
+      },
+      {
+        "type": "ol",
+        "children": [
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Cut 40 strands of rope, each 5m long. Pin them side by side to the foam board." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Work rows of square knots, alternating to create a diamond lattice pattern." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Every 10cm, create a row of diagonal half-hitch knots to add visual interest." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Continue the pattern until the runner reaches your desired length." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Create matching fringe on both ends by brushing out 15cm of rope." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Remove from the board and gently steam or press to set the shape." }] }] }
+        ]
+      },
+      {
+        "type": "h2",
+        "children": [{ "type": "text", "text": "Tips & Tricks" }]
+      },
+      {
+        "type": "ul",
+        "children": [
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "This is a great project for binge-watching — the repetitive pattern is meditative once you get going." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Machine wash on gentle cycle and lay flat to dry." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Use unbleached cotton for a rustic look, or white cotton for a more refined aesthetic." }] }] }
+        ]
+      }
+    ]
+  }
+}

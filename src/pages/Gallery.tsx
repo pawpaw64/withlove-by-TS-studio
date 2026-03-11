@@ -3,52 +3,14 @@ import { X } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
-
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
-import gallery6 from "@/assets/gallery-6.jpg";
-import gallery7 from "@/assets/gallery-7.jpg";
-import gallery8 from "@/assets/gallery-8.jpg";
-import d1 from "@/assets/d1.jpg";
-import d2 from "@/assets/d2.jpg";
-import d3 from "@/assets/d3.jpg";
-import d4 from "@/assets/d4.jpg";
-import d5 from "@/assets/d5.jpg";
-import d6 from "@/assets/d6.jpg";
-
-interface GalleryItem {
-  src: string;
-  title: string;
-  category: string;
-  span: string; // tailwind grid span class
-}
-
-const galleryItems: GalleryItem[] = [
-  { src: gallery1, title: "Bohemian Wall Hanging", category: "Wall Art", span: "row-span-2" },
-  { src: gallery2, title: "Hanging Planter", category: "Plant Hangers", span: "" },
-  { src: gallery3, title: "Table Runner", category: "Home Decor", span: "col-span-2" },
-  { src: gallery4, title: "Mandala Wall Art", category: "Wall Art", span: "row-span-2" },
-  { src: gallery5, title: "Colorful Keychains", category: "Accessories", span: "" },
-  { src: gallery6, title: "Room Divider", category: "Home Decor", span: "row-span-2" },
-  { src: gallery7, title: "Woven Coasters", category: "Home Decor", span: "" },
-  { src: gallery8, title: "Boho Bag", category: "Accessories", span: "row-span-2" },
-  { src: d1, title: "Sunset Knots", category: "Wall Art", span: "" },
-  { src: d2, title: "Garden Hanger", category: "Plant Hangers", span: "" },
-  { src: d3, title: "Festival Piece", category: "Accessories", span: "col-span-2" },
-  { src: d4, title: "Minimalist Hanging", category: "Wall Art", span: "" },
-  { src: d5, title: "Cotton Basket", category: "Home Decor", span: "" },
-  { src: d6, title: "Wedding Backdrop", category: "Custom Orders", span: "row-span-2" },
-];
-
-const categories = ["All", ...Array.from(new Set(galleryItems.map(i => i.category)))];
+import { useGalleryItems } from "@/hooks/useGalleryItems";
 
 const Gallery = () => {
+  const galleryItems = useGalleryItems();
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  const categories = ["All", ...Array.from(new Set(galleryItems.map(i => i.category)))];
   const filtered = activeCategory === "All" ? galleryItems : galleryItems.filter(i => i.category === activeCategory);
 
   return (
@@ -92,7 +54,7 @@ const Gallery = () => {
               className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded-xl border border-border"
             >
               <img
-                src={item.src}
+                src={item.image}
                 alt={item.title}
                 loading="lazy"
                 className="w-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -124,7 +86,7 @@ const Gallery = () => {
             <X size={32} />
           </button>
           <img
-            src={filtered[lightboxIndex].src}
+            src={filtered[lightboxIndex].image}
             alt={filtered[lightboxIndex].title}
             className="max-h-[85vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}

@@ -1,0 +1,71 @@
+{
+  "title": "DIY Macrame Plant Hangers",
+  "excerpt": "Bring nature indoors with these beautiful macrame plant hangers. Simple designs that add bohemian charm to any room.",
+  "category": "Plant Hangers",
+  "date": "2026-03-05T00:00:00.000Z",
+  "image": "/uploads/blog-2.jpg",
+  "body": {
+    "type": "root",
+    "children": [
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "Plant hangers are the quintessential macrame project. They're practical, beautiful, and surprisingly easy to make." }]
+      },
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "This design uses just two types of knots and can be completed in a single afternoon. The result is a stunning hanging planter that brings life to any corner." }]
+      },
+      {
+        "type": "p",
+        "children": [{ "type": "text", "text": "You can customize the length and pot size to fit your space perfectly." }]
+      },
+      {
+        "type": "h2",
+        "children": [{ "type": "text", "text": "Materials Needed" }]
+      },
+      {
+        "type": "ul",
+        "children": [
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "5mm cotton rope (25m)" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Metal or wooden ring (5cm)" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Plant pot (15cm diameter)" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Scissors" }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Beads (optional)" }] }] }
+        ]
+      },
+      {
+        "type": "p",
+        "children": [
+          { "type": "text", "text": "Finished Size: Holds pots up to 15cm diameter, 80cm total length | Difficulty: Beginner | Time: 2-3 hours", "bold": true }
+        ]
+      },
+      {
+        "type": "h2",
+        "children": [{ "type": "text", "text": "Step-by-Step Tutorial" }]
+      },
+      {
+        "type": "ol",
+        "children": [
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Cut 8 strands of rope, each 3m long. Thread them through the ring and even out the ends." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Create a gathering knot just below the ring using a separate piece of rope." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Separate the strands into 4 groups of 4. Tie square knots about 20cm down from the ring." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Create a second tier of square knots 10cm below, alternating the strand groupings." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Repeat for a third tier, then gather all strands with a final gathering knot." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Trim the tassel ends evenly and place your potted plant inside." }] }] }
+        ]
+      },
+      {
+        "type": "h2",
+        "children": [{ "type": "text", "text": "Tips & Tricks" }]
+      },
+      {
+        "type": "ul",
+        "children": [
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Test with your pot before trimming the final length." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Add wooden beads between knot tiers for extra boho flair." }] }] },
+          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Use thicker rope (5-6mm) for heavier pots." }] }] }
+        ]
+      }
+    ]
+  }
+}

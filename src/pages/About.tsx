@@ -2,9 +2,13 @@ import { Heart, Sparkles, Star, Flower2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
-import creatorPhoto from "@/assets/creator-photo.jpg";
+import { useAboutContent } from "@/hooks/useAboutContent";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const About = () => {
+  const about = useAboutContent();
+  const site = useSiteSettings();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -33,10 +37,10 @@ const About = () => {
 
           <h1 className="font-display text-4xl md:text-6xl font-bold mb-4">
             <span className="font-satisfy italic text-foreground">About </span>
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">withlovebyts</span>
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{site.brandName}</span>
           </h1>
           <p className="text-muted-foreground font-body text-lg max-w-xl mx-auto mb-12 italic">
-            The story behind every knot, every thread, every creation
+            {about.pageSubtitle}
           </p>
 
           {/* Creator photo with animated rings */}
@@ -53,8 +57,8 @@ const About = () => {
 
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-peach/60 shadow-xl relative z-10">
               <img
-                src={creatorPhoto}
-                alt="Creator of withlovebyts"
+                src={about.creatorPhoto}
+                alt={`Creator of ${site.brandName}`}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -86,7 +90,7 @@ const About = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-2">
-              Hi, I'm <span className="font-satisfy italic text-primary">TS</span>
+              Hi, I'm <span className="font-satisfy italic text-primary">{about.creatorName}</span>
             </h2>
             <div className="flex items-center justify-center gap-2 text-muted-foreground">
               <span className="w-8 h-px bg-primary/30" />
@@ -97,20 +101,13 @@ const About = () => {
 
           <div className="space-y-6 font-body text-muted-foreground leading-relaxed text-center md:text-lg">
             <p>
-              Welcome to <strong className="text-foreground font-semibold">withlovebyts</strong> — a space where cotton cords transform into art, 
-              and every knot tells a story. My journey with macrame began in 2020, when I discovered the meditative 
-              beauty of knotting during a quiet afternoon at home.
+              {about.bioParagraph1}
             </p>
             <p>
-              What started as a hobby quickly became a passion. I fell in love with the way simple materials — 
-              just rope and patience — could become stunning wall hangings, plant holders, and decorative pieces 
-              that bring warmth and texture to any space.
+              {about.bioParagraph2}
             </p>
             <p>
-              Through this blog, I share everything I've learned: from beginner-friendly tutorials to advanced 
-              pattern guides, material recommendations, and the stories behind each piece I create. My mission 
-              is to inspire others to pick up a cord and experience the joy of making something beautiful with 
-              their own hands.
+              {about.bioParagraph3}
             </p>
           </div>
         </div>
@@ -128,34 +125,25 @@ const About = () => {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Heart className="text-accent" size={28} />,
-                title: "Made with Love",
-                desc: "Every piece is crafted with intention and care. I believe handmade items carry a special energy that mass-produced goods simply can't replicate.",
-              },
-              {
-                icon: <Sparkles className="text-primary" size={28} />,
-                title: "Slow Craft",
-                desc: "In a fast-paced world, macrame reminds us to slow down, be present, and find beauty in the process — not just the result.",
-              },
-              {
-                icon: <Flower2 className="text-accent" size={28} />,
-                title: "Share & Inspire",
-                desc: "Knowledge grows when shared. I create tutorials and guides so anyone can discover the joy of macrame, regardless of experience.",
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="bg-card border border-border/40 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 group"
-              >
-                <div className="w-14 h-14 bg-peach/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
+            {about.values.map((item, index) => {
+              const icons = [
+                <Heart className="text-accent" size={28} />,
+                <Sparkles className="text-primary" size={28} />,
+                <Flower2 className="text-accent" size={28} />,
+              ];
+              return (
+                <div
+                  key={item.title}
+                  className="bg-card border border-border/40 rounded-2xl p-8 text-center hover:shadow-lg transition-shadow duration-300 group"
+                >
+                  <div className="w-14 h-14 bg-peach/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {icons[index % icons.length]}
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed">{item.description}</p>
                 </div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground font-body leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -173,23 +161,23 @@ const About = () => {
         <div className="bg-secondary pt-20 pb-16 text-center">
           <div className="container mx-auto px-4">
             <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Let's Create <span className="font-satisfy italic text-primary">Together</span>
+              {about.ctaHeading}
             </h2>
             <p className="text-muted-foreground font-body mb-6 max-w-md mx-auto">
-              Explore my tutorials, get inspired by the gallery, or reach out for custom pieces.
+              {about.ctaDescription}
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link
-                to="/#posts"
+                to={about.ctaButton1Link}
                 className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-body hover:opacity-90 transition-opacity shadow-md"
               >
-                Browse Tutorials
+                {about.ctaButton1Label}
               </Link>
               <Link
-                to="/gallery"
+                to={about.ctaButton2Link}
                 className="border-2 border-primary/30 text-foreground px-8 py-3 rounded-full font-body hover:bg-card transition-colors"
               >
-                View Gallery
+                {about.ctaButton2Label}
               </Link>
             </div>
           </div>

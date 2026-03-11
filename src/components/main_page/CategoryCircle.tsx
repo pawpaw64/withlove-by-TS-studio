@@ -1,4 +1,4 @@
-import { Category } from "@/data/categories";
+import type { Category } from "@/types/post";
 
 interface CategoryCircleProps {
   category: Category;

@@ -27,9 +27,11 @@
     "types": [
       "vitest/globals"
     ],
+    "resolveJsonModule": true,
     "useDefineForClassFields": true
   },
   "include": [
-    "src"
+    "src",
+    "content"
   ]
 }

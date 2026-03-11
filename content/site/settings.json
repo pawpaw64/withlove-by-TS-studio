@@ -1,0 +1,21 @@
+{
+  "brandName": "withlovebyts",
+  "heroSubtitle": "Handcrafted macrame art made with love. Discover tutorials, inspiration, and the beauty of knotting.",
+  "heroCtaText": "Explore Works",
+  "heroCtaLink": "#posts",
+  "heroImage": "/uploads/watercolor-hero.jpg",
+  "blogSectionTitle": "Explore Macrame Pieces",
+  "blogSectionSubtitle": "Browse by category or discover our featured works",
+  "footerDescription": "Handcrafted macrame art and tutorials. Every knot tied with love and care.",
+  "facebookUrl": "https://www.facebook.com/withlovebyts",
+  "newsletterTitle": "Subscribe to Newsletter",
+  "newsletterDescription": "Get macrame tips and new patterns delivered to your inbox.",
+  "emailPlaceholder": "tsum64@gmail.com",
+  "copyrightText": "by withlovebyts",
+  "footerLinks": [
+    { "label": "Tutorials", "href": "/#posts" },
+    { "label": "Gallery", "href": "/gallery" },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "https://www.facebook.com/withlovebyts" }
+  ]
+}

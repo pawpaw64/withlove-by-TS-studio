@@ -1,12 +1,46 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Clock, Ruler, BarChart3, Scissors } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
-import { posts } from "@/data/posts";
+import type { Post } from "@/types/post";
+
+interface PostFile {
+  title?: string;
+  excerpt?: string;
+  category?: string;
+  date?: string;
+  image?: string;
+  body?: unknown;
+}
+
+const modules = import.meta.glob<PostFile>("../../content/posts/*.json", {
+  eager: true,
+  import: "default",
+});
+
+function getPost(slug: string | undefined): Post | undefined {
+  if (!slug) return undefined;
+  for (const [path, data] of Object.entries(modules)) {
+    const filename = path.split("/").pop()?.replace(".json", "") ?? "";
+    if (filename === slug && data) {
+      return {
+        slug: filename,
+        title: data.title ?? "",
+        excerpt: data.excerpt ?? "",
+        category: data.category ?? "",
+        date: data.date ?? "",
+        image: data.image ?? "",
+        body: data.body,
+      };
+    }
+  }
+  return undefined;
+}
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = posts.find(p => p.slug === slug);
+  const post = getPost(slug);
 
   if (!post) {
     return (
@@ -18,6 +52,10 @@ const BlogPost = () => {
       </div>
     );
   }
+
+  const formattedDate = post.date
+    ? new Date(post.date).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+    : "";
 
   return (
     <div className="min-h-screen bg-background">
@@ -37,105 +75,22 @@ const BlogPost = () => {
           <h1 className="font-display text-3xl md:text-5xl font-bold text-primary-foreground max-w-3xl">
             {post.title}
           </h1>
-          <p className="text-primary-foreground/70 font-body text-sm mt-2">{post.date}</p>
+          <p className="text-primary-foreground/70 font-body text-sm mt-2">{formattedDate}</p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Quick info cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
-          {[
-            { icon: BarChart3, label: "Difficulty", value: post.difficulty },
-            { icon: Clock, label: "Time", value: post.timeEstimate },
-            { icon: Ruler, label: "Finished Size", value: post.size },
-            { icon: Scissors, label: "Materials", value: `${post.materials.length} items` },
-          ].map(({ icon: Icon, label, value }) => (
-            <div key={label} className="bg-card border border-border rounded-xl p-4 text-center">
-              <Icon size={20} className="mx-auto text-primary mb-1" />
-              <p className="text-xs text-muted-foreground font-body">{label}</p>
-              <p className="font-display text-sm font-semibold text-foreground">{value}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Content */}
-        <div className="space-y-5 mb-12">
-          {post.content.map((paragraph, i) => (
-            <p key={i} className="text-muted-foreground font-body leading-relaxed text-base">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-
-        {/* Materials section */}
-        <div className="bg-peach/20 border border-peach/40 rounded-2xl p-6 md:p-8 mb-12">
-          <h2 className="font-display text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
-            <Scissors size={22} className="text-primary" />
-            Materials Needed
-          </h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {post.materials.map((material, i) => (
-              <li key={i} className="flex items-start gap-2 font-body text-sm text-foreground">
-                <span className="w-1.5 h-1.5 mt-2 rounded-full bg-primary shrink-0" />
-                {material}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Size info */}
-        <div className="bg-blush/20 border border-blush/40 rounded-2xl p-6 md:p-8 mb-12">
-          <h2 className="font-display text-2xl font-bold text-foreground mb-2 flex items-center gap-2">
-            <Ruler size={22} className="text-accent" />
-            Finished Size
-          </h2>
-          <p className="font-body text-muted-foreground">{post.size}</p>
-          <div className="mt-3 flex gap-4">
-            <div className="bg-card rounded-xl px-4 py-2 border border-border">
-              <p className="text-xs text-muted-foreground font-body">Difficulty</p>
-              <p className="font-display text-sm font-semibold text-foreground">{post.difficulty}</p>
-            </div>
-            <div className="bg-card rounded-xl px-4 py-2 border border-border">
-              <p className="text-xs text-muted-foreground font-body">Time</p>
-              <p className="font-display text-sm font-semibold text-foreground">{post.timeEstimate}</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Tutorial steps */}
-        <div className="mb-12">
-          <h2 className="font-display text-2xl font-bold text-foreground mb-6">
-            Step-by-Step Tutorial
-          </h2>
-          <div className="space-y-4">
-            {post.steps.map((step, i) => (
-              <div key={i} className="flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-display font-bold shrink-0">
-                  {i + 1}
-                </div>
-                <p className="font-body text-muted-foreground leading-relaxed pt-1">{step}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tips */}
-        <div className="bg-cream border border-border rounded-2xl p-6 md:p-8 mb-12">
-          <h2 className="font-display text-2xl font-bold text-foreground mb-4">
-            💡 Tips & Tricks
-          </h2>
-          <ul className="space-y-3">
-            {post.tips.map((tip, i) => (
-              <li key={i} className="flex items-start gap-2 font-body text-sm text-muted-foreground">
-                <span className="text-primary font-bold">✦</span>
-                {tip}
-              </li>
-            ))}
-          </ul>
+        {/* Rich-text body */}
+        <div className="prose prose-lg max-w-none font-body text-muted-foreground prose-headings:font-display prose-headings:text-foreground prose-strong:text-foreground prose-a:text-primary">
+          {post.body ? (
+            <TinaMarkdown content={post.body as Parameters<typeof TinaMarkdown>[0]["content"]} />
+          ) : (
+            <p className="italic">No content yet.</p>
+          )}
         </div>
 
         {/* Back link */}
-        <div className="text-center">
+        <div className="text-center mt-12">
           <Link
             to="/"
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-full font-body hover:opacity-90 transition-opacity"

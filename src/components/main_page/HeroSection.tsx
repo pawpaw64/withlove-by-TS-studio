@@ -1,7 +1,9 @@
-import heroImg from "@/assets/watercolor-hero.jpg";
-import { Sparkles, Flower2 } from "lucide-react"; // You'll need to install lucide-react if not already
+import { Sparkles, Flower2 } from "lucide-react";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const HeroSection = () => {
+  const site = useSiteSettings();
+
   return (
     <section className="relative overflow-hidden">
       {/* Decorative background elements */}
@@ -11,7 +13,7 @@ const HeroSection = () => {
       </div>
 
       <img
-        src={heroImg}
+        src={site.heroImage}
         alt="Watercolor background"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
@@ -62,7 +64,7 @@ const HeroSection = () => {
         <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 italic animate-fade-in relative" style={{ animationDelay: "0.2s" }}>
           <span className="relative inline-block">
             <span className="absolute -left-6 top-1/2 -translate-y-1/2 w-4 h-px bg-primary/30 hidden md:block " />
-            Handcrafted macrame art made with love. Discover tutorials, inspiration, and the beauty of knotting.
+            {site.heroSubtitle}
             <span className="absolute -right-6 top-1/2 -translate-y-1/2 w-4 h-px bg-primary/30 hidden md:block" />
           </span>
         </p>
@@ -73,10 +75,10 @@ const HeroSection = () => {
           <div className="absolute right-1/4 -bottom-12 w-3 h-3 bg-peach/50 rounded-full hidden md:block" />
           
           <a
-            href="#posts"
+            href={site.heroCtaLink}
             className="bg-primary text-primary-foreground px-8 py-3 rounded-full font-body text-lg hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
           >
-            Explore Works
+            {site.heroCtaText}
           </a>
           {/* <a
             href="#subscribe"

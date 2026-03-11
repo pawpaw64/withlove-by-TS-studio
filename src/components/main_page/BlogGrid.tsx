@@ -2,10 +2,14 @@ import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BlogCard from "./BlogCard";
 import CategoryCircle from "./CategoryCircle";
-import { posts } from "@/data/posts";
-import { categories } from "@/data/categories";
+import { usePosts } from "@/hooks/usePosts";
+import { useCategories } from "@/hooks/useCategories";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const BlogGrid = () => {
+  const posts = usePosts();
+  const categories = useCategories();
+  const site = useSiteSettings();
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -22,10 +26,10 @@ const BlogGrid = () => {
     <section id="posts" className="container mx-auto px-4 py-16 md:py-16">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
-          Explore Macrame Pieces
+          {site.blogSectionTitle}
         </h2>
         <p className="text-muted-foreground font-body italic max-w-lg mx-auto">
-          Browse by category or discover our featured works
+          {site.blogSectionSubtitle}
         </p>
       </div>
 
