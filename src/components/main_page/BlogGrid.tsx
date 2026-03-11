@@ -12,7 +12,7 @@ const BlogGrid = () => {
           Tutorials, inspiration, and everything macrame
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {posts.map((post) => (
           <BlogCard key={post.slug} slug={post.slug} image={post.image} title={post.title} excerpt={post.excerpt} date={post.date} category={post.category} />
         ))}
