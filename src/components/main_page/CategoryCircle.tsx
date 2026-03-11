@@ -1,17 +1,17 @@
 import type { Category } from "@/types/post";
+import { Link } from "react-router-dom";
 
 interface CategoryCircleProps {
   category: Category;
   isActive: boolean;
-  onClick: (id: string) => void;
+  onClick?: (id: string) => void;
+  linkTo?: string;
 }
 
-const CategoryCircle = ({ category, isActive, onClick }: CategoryCircleProps) => {
-  return (
-    <button
-      onClick={() => onClick(category.id)}
-      className="flex flex-col items-center gap-2.5 group flex-shrink-0"
-    >
+const CategoryCircle = ({ category, isActive, onClick, linkTo }: CategoryCircleProps) => {
+  const content = (
+    <div className="flex flex-col items-center gap-2.5 group flex-shrink-0">
+
       {/* Decorative ring container */}
       <div
         className={`relative w-20 h-20 md:w-24 md:h-24 rounded-full p-1 transition-all duration-300 ${
