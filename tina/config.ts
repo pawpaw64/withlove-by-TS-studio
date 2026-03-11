@@ -40,18 +40,10 @@ export default defineConfig({
             ui: { component: "textarea" },
           },
           {
-            type: "string",
+            type: "reference",
             name: "category",
             label: "Category",
-            options: [
-              "Wall Hangings",
-              "Plant Hangers",
-              "Keychains",
-              "Bags",
-              "Home Decor",
-              "Jewelry",
-              "Other",
-            ],
+            collections: ["category"],
           },
           {
             type: "datetime",
