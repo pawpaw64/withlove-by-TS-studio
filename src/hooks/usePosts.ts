@@ -23,10 +23,15 @@ export function usePosts(): Post[] {
   for (const [path, data] of Object.entries(modules)) {
     if (!data) continue;
     const filename = path.split("/").pop()?.replace(".json", "") ?? "";
-    // category is stored as a reference path like "content/categories/wall-hangings"
+    // category is stored as a reference path like "content/categories/wall-hangings" or "content/categories/wall-hangings.json"
     const catRef = data.category ?? "";
-    const catSlug = catRef.split("/").pop() ?? "";
-    const catLabel = categories.find((c) => c.id === catSlug)?.label ?? catSlug;
+    // strip .json suffix if present, then get the slug
+    const catSlug = catRef.split("/").pop()?.replace(/\.json$/, "") ?? "";
+    // match by categoryId first, then by filename
+    const cat = categories.find(
+      (c) => c.id === catSlug || c._filename === catSlug
+    );
+    const catLabel = cat?.label || catSlug;
     posts.push({
       slug: filename,
       title: data.title ?? "",

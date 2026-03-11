@@ -30,4 +30,6 @@ export interface Category {
   id: string;
   label: string;
   image: string;
+  /** raw filename (without .json) for reference matching */
+  _filename?: string;
 }

@@ -14,12 +14,15 @@ const modules = import.meta.glob<CategoryFile>(
 export function useCategories(): Category[] {
   const categories: Category[] = [];
 
-  for (const [, data] of Object.entries(modules)) {
+  for (const [path, data] of Object.entries(modules)) {
     if (!data) continue;
+    const filename = path.split("/").pop()?.replace(".json", "") ?? "";
     categories.push({
-      id: data.categoryId ?? "",
-      label: data.label ?? "",
+      id: data.categoryId ?? filename,
+      label: data.label ?? filename,
       image: data.image ?? "",
+      /** the raw filename without .json so we can match references */
+      _filename: filename,
     });
   }
 

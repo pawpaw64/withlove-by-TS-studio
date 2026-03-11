@@ -4,6 +4,7 @@ import { ArrowLeft, BookOpen, Wrench, ListOrdered, Lightbulb, Clock, BarChart3, 
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import Header from "@/components/main_page/Header";
 import Footer from "@/components/main_page/Footer";
+import { useCategories } from "@/hooks/useCategories";
 import type { Post, TutorialStep, VideoTutorial } from "@/types/post";
 
 interface PostFile {
@@ -86,16 +87,19 @@ function getIcon(title: string): React.ReactNode {
   return <BookOpen className="w-5 h-5" />;
 }
 
-function getPost(slug: string | undefined): Post | undefined {
+function getPost(slug: string | undefined, categories: ReturnType<typeof useCategories>): Post | undefined {
   if (!slug) return undefined;
   for (const [path, data] of Object.entries(modules)) {
     const filename = path.split("/").pop()?.replace(".json", "") ?? "";
     if (filename === slug && data) {
+      const catRef = data.category ?? "";
+      const catSlug = catRef.split("/").pop()?.replace(/\.json$/, "") ?? "";
+      const cat = categories.find((c) => c.id === catSlug || c._filename === catSlug);
       return {
         slug: filename,
         title: data.title ?? "",
         excerpt: data.excerpt ?? "",
-        category: data.category ?? "",
+        category: cat?.label || catSlug,
         date: data.date ?? "",
         image: data.image ?? "",
         difficulty: data.difficulty,
@@ -114,7 +118,8 @@ function getPost(slug: string | undefined): Post | undefined {
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = getPost(slug);
+  const categories = useCategories();
+  const post = getPost(slug, categories);
   const [openSection, setOpenSection] = useState<number>(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
