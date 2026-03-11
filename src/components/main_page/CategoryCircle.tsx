@@ -10,7 +10,7 @@ interface CategoryCircleProps {
 
 const CategoryCircle = ({ category, isActive, onClick, linkTo }: CategoryCircleProps) => {
   const content = (
-    <div className="flex flex-col items-center gap-2.5 group flex-shrink-0">
+    <div className="w-full px-4 py-2 flex flex-col items-center gap-2 group">
 
       {/* Decorative ring container */}
       <div

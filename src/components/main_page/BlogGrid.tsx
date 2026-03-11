@@ -34,7 +34,7 @@ const BlogGrid = () => {
       </div>
 
       {/* Category circles - horizontal scrollable */}
-      <div className="relative max-w-4xl mx-auto mb-14">
+      <div className="w-full px-4 relative mb-12">
         {/* Scroll buttons */}
         <button
           onClick={() => scroll("left")}
