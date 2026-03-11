@@ -1,72 +1,8 @@
 {
   "title": "Boho Dreamcatcher Macrame Fusion",
   "excerpt": "Combine macrame with dreamcatcher elements for stunning wall decor that brings warmth and good vibes to your space.",
-  "category": "content/categories/wall-hangings",
+  "category": "content/categories/keychains.json",
   "date": "2026-02-25T00:00:00.000Z",
   "image": "/uploads/blog-4.jpg",
-  "body": {
-    "type": "root",
-    "children": [
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "This fusion project combines the structured beauty of macrame with the whimsical charm of dreamcatchers." }]
-      },
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "The result is a unique wall piece that captures attention and adds a deeply personal touch to your decor." }]
-      },
-      {
-        "type": "p",
-        "children": [{ "type": "text", "text": "Feel free to experiment with colors and materials — dyed rope, crystals, and dried flowers all make beautiful additions." }]
-      },
-      {
-        "type": "h2",
-        "children": [{ "type": "text", "text": "Materials Needed" }]
-      },
-      {
-        "type": "ul",
-        "children": [
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "3mm cotton rope (30m)" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Metal hoop (25cm)" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Feathers" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Wooden beads" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Scissors" }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Fabric glue" }] }] }
-        ]
-      },
-      {
-        "type": "p",
-        "children": [
-          { "type": "text", "text": "Finished Size: 25cm diameter hoop, 70cm total with fringe | Difficulty: Intermediate | Time: 4-5 hours", "bold": true }
-        ]
-      },
-      {
-        "type": "h2",
-        "children": [{ "type": "text", "text": "Step-by-Step Tutorial" }]
-      },
-      {
-        "type": "ol",
-        "children": [
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Wrap the metal hoop completely with rope using a continuous wrapping technique. Secure with glue." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Create a web pattern inside the hoop using half-hitch knots, working from the frame inward." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Attach long strands to the bottom half of the hoop using lark's head knots." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Create alternating square knot patterns with the hanging strands." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Add beads and feathers to selected strands." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Trim the fringe into a curved shape and brush out for a soft finish." }] }] }
-        ]
-      },
-      {
-        "type": "h2",
-        "children": [{ "type": "text", "text": "Tips & Tricks" }]
-      },
-      {
-        "type": "ul",
-        "children": [
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Use a lighter color rope for the wrapping and a contrasting shade for the hanging strands." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Dried eucalyptus or lavender tucked into the design adds a lovely natural touch." }] }] },
-          { "type": "li", "children": [{ "type": "lic", "children": [{ "type": "text", "text": "Hang it where it catches gentle air movement for a living, breathing art piece." }] }] }
-        ]
-      }
-    ]
-  }
+  "body": "\\[object Object]\n"
 }
