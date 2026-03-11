@@ -1,4 +1,5 @@
 {
-    "label":  "Shelf",
-    "image":  "/uploads/SmartSelect_20240604_215656_Facebook.jpg"
+  "categoryId": "Shelf",
+  "label": "Shelf",
+  "image": "/uploads/SmartSelect_20240604_215656_Facebook.jpg"
 }

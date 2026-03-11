@@ -1,4 +1,5 @@
 {
-    "label":  "Accessories",
-    "image":  "/uploads/gallery-8.jpg"
+  "categoryId": "Accessories",
+  "label": "Accessories",
+  "image": "/uploads/gallery-8.jpg"
 }
