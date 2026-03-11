@@ -378,48 +378,48 @@ export default defineConfig({
           },
         ],
       },
-      // {
-      //   name: "galleryItem",
-      //   label: "Gallery",
-      //   path: "content/gallery",
-      //   format: "json",
-      //   fields: [
-      //     {
-      //       type: "string",
-      //       name: "title",
-      //       label: "Title",
-      //       isTitle: true,
-      //       required: true,
-      //     },
-      //     {
-      //       type: "string",
-      //       name: "category",
-      //       label: "Category",
-      //       options: [
-      //         "Wall Art",
-      //         "Plant Hangers",
-      //         "Home Decor",
-      //         "Accessories",
-      //         "Custom Orders",
-      //       ],
-      //     },
-      //     {
-      //       type: "image",
-      //       name: "image",
-      //       label: "Image",
-      //     },
-      //     {
-      //       type: "string",
-      //       name: "gridSpan",
-      //       label: "Grid Size",
-      //       options: [
-      //         { label: "Normal", value: "" },
-      //         { label: "Tall (2 rows)", value: "row-span-2" },
-      //         { label: "Wide (2 columns)", value: "col-span-2" },
-      //       ],
-      //     },
-      //   ],
-      // },
+      {
+        name: "galleryItem",
+        label: "Gallery",
+        path: "content/gallery",
+        format: "json",
+        fields: [
+          {
+            type: "string",
+            name: "title",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category",
+            options: [
+              "Wall Art",
+              "Plant Hangers",
+              "Home Decor",
+              "Accessories",
+              "Custom Orders",
+            ],
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Image",
+          },
+          {
+            type: "string",
+            name: "gridSpan",
+            label: "Grid Size",
+            options: [
+              { label: "Normal", value: "" },
+              { label: "Tall (2 rows)", value: "row-span-2" },
+              { label: "Wide (2 columns)", value: "col-span-2" },
+            ],
+          },
+        ],
+      },
       {
         name: "galleryBulk",
         label: "Gallery Bulk Import",
