@@ -1,4 +1,5 @@
 {
-    "label":  "Home Decor",
-    "image":  "/uploads/gallery-3.jpg"
+  "categoryId": "Home Decor",
+  "label": "Home Decor",
+  "image": "/uploads/gallery-3.jpg"
 }
