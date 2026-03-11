@@ -3,10 +3,12 @@ import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "/" },
+   { label: "Home", href: "/" },
+   { label: "About", href: "/about" },
+ 
   { label: "Tutorials", href: "/#posts" },
   { label: "Gallery", href: "/gallery" },
-  { label: "About", href: "/about" },
+ 
 ];
 
 const Header = () => {

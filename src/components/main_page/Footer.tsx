@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="space-y-2">
               {["Tutorials", "Gallery", "About", "Contact"].map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
+                  <a href="https://www.facebook.com/withlovebyts" className="text-sm text-muted-foreground hover:text-primary transition-colors font-body">
                     {link}
                   </a>
                 </li>
@@ -39,7 +39,7 @@ const Footer = () => {
             <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
               <input
                 type="email"
-                placeholder="Your email"
+                placeholder="tsum64@gmail.com"
                 className="flex-1 bg-background border border-border rounded-full px-4 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
               />
               <button

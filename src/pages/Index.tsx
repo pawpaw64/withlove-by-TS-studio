@@ -8,8 +8,10 @@ import Footer from "@/components/main_page/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <HeroSection />
+      <HeroSection/>
+      
       <Header />
+     
       <BlogGrid />
       <Footer />
     </div>

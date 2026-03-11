@@ -23,10 +23,10 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
-    slug: "getting-started-with-macrame-wall-hangings",
+    slug: "getting-started-with-macrame-keyrings",
     image: blog1,
-    title: "Getting Started with Macrame Wall Hangings",
-    excerpt: "Learn the basic knots and techniques to create your very first macrame wall hanging. A perfect beginner project.",
+    title: "Getting Started with Macrame Keyrings",
+    excerpt: "Learn the basic knots and techniques to create your very first macrame keyring. A perfect beginner project.",
     date: "Mar 8, 2026",
     category: "Tutorial",
     materials: ["4mm natural cotton rope (50m)", "Wooden dowel (40cm)", "Scissors", "Measuring tape", "Comb or brush"],
@@ -51,6 +51,7 @@ export const posts: BlogPost[] = [
       "Keep your knots consistent in tension for a professional-looking result.",
       "Natural cotton rope is easiest to work with and gives the most beautiful fringe when combed out."
     ]
+    
   },
   {
     slug: "diy-macrame-plant-hangers",
