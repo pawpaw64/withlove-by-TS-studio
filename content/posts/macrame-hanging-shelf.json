@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-hanging-shelf",
+  "title": "Macrame Hanging Shelf",
+  "excerpt": "Combine functionality with boho style by creating this beautiful macrame hanging shelf.",
+  "category": "shelf",
+  "date": "2026-03-09",
+  "image": "/uploads/macrame-hanging-shelf.jpg",
+  "difficulty": "Intermediate",
+  "timeEstimate": "3-4 hours",
+  "materials": [
+    "5mm cotton rope (30m)",
+    "Wooden board (30cm x 15cm)",
+    "Drill with 10mm bit",
+    "Wooden ring for hanging",
+    "Sandpaper"
+  ],
+  "steps": [
+    {
+      "title": "Prepare shelf",
+      "description": "Sand the wooden board smooth and drill holes in each corner, 2cm from edges."
+    },
+    {
+      "title": "Cut and attach cords",
+      "description": "Cut 4 long cords and attach to the hanging ring, then thread through shelf holes."
+    },
+    {
+      "title": "Secure the shelf",
+      "description": "Create knots below the shelf to hold it level, checking with a spirit level."
+    },
+    {
+      "title": "Decorate and finish",
+      "description": "Add decorative knots above and below the shelf, finish with a tassel."
+    }
+  ],
+  "tips": [
+    "Stain or paint the wood to match your decor",
+    "Add multiple shelves for a tiered look"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "macrame-keychain-diy",
+  "title": "DIY Macrame Keychain Tutorial",
+  "excerpt": "Learn how to create a beautiful handmade macrame keychain perfect for gifts or personal use.",
+  "category": "accessories",
+  "date": "2026-03-10",
+  "image": "/uploads/macrame-keychain.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "30 minutes",
+  "materials": [
+    "3mm cotton cord",
+    "Keychain ring",
+    "Scissors",
+    "Wooden beads (optional)"
+  ],
+  "steps": [
+    {
+      "title": "Cut your cords",
+      "description": "Cut 4 pieces of cord, each about 40cm long."
+    },
+    {
+      "title": "Attach to keyring",
+      "description": "Fold each cord in half and attach to the keyring using a lark's head knot."
+    },
+    {
+      "title": "Create square knots",
+      "description": "Make a series of square knots going down about 3-4cm."
+    },
+    {
+      "title": "Finish and trim",
+      "description": "Tie a gathering knot at the bottom and trim the ends to create a tassel."
+    }
+  ],
+  "tips": [
+    "Use a clipboard to hold the keyring while working",
+    "Add beads between knots for extra decoration"
+  ]
+}

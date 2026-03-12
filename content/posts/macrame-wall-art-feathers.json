@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-wall-art-feathers",
+  "title": "Macrame Feather Wall Art",
+  "excerpt": "Create stunning decorative feathers using macrame techniques for unique wall decor.",
+  "category": "wall-Arts",
+  "date": "2026-03-10",
+  "image": "/uploads/macrame-feathers.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "1-2 hours per feather",
+  "materials": [
+    "3mm cotton cord",
+    "Thin wire or floral wire",
+    "Scissors",
+    "Fabric stiffener",
+    "Comb"
+  ],
+  "steps": [
+    {
+      "title": "Create the spine",
+      "description": "Twist several cords together tightly or use wire wrapped in cord for the center."
+    },
+    {
+      "title": "Add the barbs",
+      "description": "Cut short pieces of cord and attach along the spine using lark's head knots."
+    },
+    {
+      "title": "Shape the feather",
+      "description": "Comb out all the attached cords and trim into a feather shape."
+    },
+    {
+      "title": "Finish and stiffen",
+      "description": "Apply fabric stiffener and shape until dry for a lasting form."
+    }
+  ],
+  "tips": [
+    "Make feathers in varying sizes for a stunning arrangement",
+    "Try dip-dyeing the ends in natural dyes for an ombre effect"
+  ]
+}

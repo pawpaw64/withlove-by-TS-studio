@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-tools-essentials",
+  "title": "Essential Tools for Macrame",
+  "excerpt": "Discover the must-have tools that will make your macrame journey easier and more enjoyable.",
+  "category": "materials",
+  "date": "2026-03-06",
+  "image": "/uploads/macrame-tools.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "Educational",
+  "materials": [
+    "Sharp scissors",
+    "Measuring tape",
+    "S-hooks and clothing rack",
+    "Comb or brush for fringe",
+    "Wooden dowels and rings"
+  ],
+  "steps": [
+    {
+      "title": "Cutting tools",
+      "description": "Invest in sharp fabric scissors - dull blades fray the cord. A rotary cutter works great for bulk cutting."
+    },
+    {
+      "title": "Mounting setup",
+      "description": "A clothing rack with S-hooks lets you work at comfortable height and move projects easily."
+    },
+    {
+      "title": "Finishing tools",
+      "description": "A wire pet brush or wide-tooth comb creates beautiful fringes. Use fabric stiffener for extra hold."
+    },
+    {
+      "title": "Hardware",
+      "description": "Stock up on wooden rings, dowels, driftwood, and metal hoops in various sizes."
+    }
+  ],
+  "tips": [
+    "A clipboard is perfect for small projects like jewelry",
+    "Use tape to mark measurements on your work surface"
+  ]
+}

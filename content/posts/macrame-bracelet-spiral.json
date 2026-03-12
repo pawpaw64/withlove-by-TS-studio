@@ -1,0 +1,38 @@
+{
+  "slug": "macrame-keychain",
+  "title": "Macrame Keychain",
+  "excerpt": "Create a stunning spiral pattern keychain using simple half hitch knots.",
+  "category": "accessories",
+  "date": "2026-03-08",
+  "image": "/uploads/macrame-bracelet.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "45 minutes",
+  "materials": [
+    "1mm waxed cord",
+    "Bracelet clasp",
+    "Tape or clipboard",
+    "Lighter for sealing ends"
+  ],
+  "steps": [
+    {
+      "title": "Prepare cords",
+      "description": "Cut one cord 30cm (core) and one cord 100cm (working cord)."
+    },
+    {
+      "title": "Start the spiral",
+      "description": "Tie half hitch knots in the same direction to create the spiral effect."
+    },
+    {
+      "title": "Continue knotting",
+      "description": "Keep making half hitches until you reach your desired bracelet length."
+    },
+    {
+      "title": "Attach clasp",
+      "description": "Trim excess cord, seal ends with a lighter, and attach the clasp."
+    }
+  ],
+  "tips": [
+    "Keep consistent tension for an even spiral",
+    "Try different colored cords for a two-tone effect"
+  ]
+}

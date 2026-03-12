@@ -1,0 +1,38 @@
+{
+  "slug": "macrame-window-valance",
+  "title": "Macrame Window Valance",
+  "excerpt": "Add a touch of handmade elegance to your windows with this decorative macrame valance.",
+  "category": "curtain",
+  "date": "2026-03-05",
+  "image": "/uploads/macrame-valance.jpg",
+  "difficulty": "Intermediate",
+  "timeEstimate": "4-5 hours",
+  "materials": [
+    "4mm cotton cord (100m)",
+    "Curtain rod",
+    "Scissors",
+    "Comb for fringe"
+  ],
+  "steps": [
+    {
+      "title": "Measure window",
+      "description": "Measure your window width and cut cords 3 times the desired length."
+    },
+    {
+      "title": "Mount on rod",
+      "description": "Attach cords directly to the curtain rod using lark's head knots."
+    },
+    {
+      "title": "Knot the design",
+      "description": "Create 3-4 rows of alternating square knots for a classic diamond pattern."
+    },
+    {
+      "title": "Create fringe",
+      "description": "Unravel the cord ends and brush out for a soft, flowing fringe."
+    }
+  ],
+  "tips": [
+    "Use a steamer to smooth out any kinks in the cord",
+    "Keep the valance short (30-40cm) to let in maximum light"
+  ]
+}

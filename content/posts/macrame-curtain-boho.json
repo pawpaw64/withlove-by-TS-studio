@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-curtain-boho",
+  "title": "Boho Macrame Door Curtain",
+  "excerpt": "Transform your doorway with this beautiful bohemian-style macrame curtain.",
+  "category": "curtain",
+  "date": "2026-03-09",
+  "image": "/uploads/macrame-door-curtain.jpg",
+  "difficulty": "Intermediate",
+  "timeEstimate": "6-8 hours",
+  "materials": [
+    "5mm cotton rope (200m)",
+    "Wooden dowel or branch (width of doorway)",
+    "Scissors",
+    "Measuring tape",
+    "Curtain rod hooks"
+  ],
+  "steps": [
+    {
+      "title": "Measure and cut",
+      "description": "Cut 60-80 cords, each 4 times the length of your desired curtain."
+    },
+    {
+      "title": "Attach to dowel",
+      "description": "Use lark's head knots to attach all cords evenly across the dowel."
+    },
+    {
+      "title": "Create pattern",
+      "description": "Alternate between rows of square knots and spiral knots, leaving gaps for the airy look."
+    },
+    {
+      "title": "Add finishing touches",
+      "description": "Trim the bottom into a V-shape or straight across, then brush out the fringe."
+    }
+  ],
+  "tips": [
+    "Work in sections to keep the pattern consistent",
+    "Hang the dowel at working height before starting"
+  ]
+}

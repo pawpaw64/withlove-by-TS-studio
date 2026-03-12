@@ -1,0 +1,38 @@
+{
+  "slug": "macrame-cord-guide",
+  "title": "Complete Guide to Macrame Cords",
+  "excerpt": "Everything you need to know about choosing the right cord for your macrame projects.",
+  "category": "materials",
+  "date": "2026-03-12",
+  "image": "/uploads/macrame-cords.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "Educational",
+  "materials": [
+    "Single strand cotton cord",
+    "3-ply twisted cotton rope",
+    "Braided cord",
+    "Jute and hemp options"
+  ],
+  "steps": [
+    {
+      "title": "Cotton cord types",
+      "description": "Single strand is great for fringe, while twisted rope holds knots better and creates defined patterns."
+    },
+    {
+      "title": "Choosing thickness",
+      "description": "1-2mm for jewelry, 3-4mm for small decor, 5-6mm for wall hangings, 8mm+ for large projects."
+    },
+    {
+      "title": "Natural vs synthetic",
+      "description": "Cotton is most popular for its softness. Jute adds rustic charm. Nylon works for outdoor items."
+    },
+    {
+      "title": "Calculating amounts",
+      "description": "General rule: multiply your finished length by 4-5x to account for knotting."
+    }
+  ],
+  "tips": [
+    "Buy extra cord - it's better to have leftovers than run short",
+    "Store cord in a dry place to prevent mildew"
+  ]
+}

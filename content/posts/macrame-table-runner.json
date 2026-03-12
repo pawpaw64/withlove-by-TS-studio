@@ -1,0 +1,38 @@
+{
+  "slug": "macrame-table-runner",
+  "title": "Elegant Macrame Table Runner",
+  "excerpt": "Elevate your dining table with this stunning handcrafted macrame table runner.",
+  "category": "home-decor",
+  "date": "2026-03-07",
+  "image": "/uploads/macrame-table-runner.jpg",
+  "difficulty": "Advanced",
+  "timeEstimate": "8-10 hours",
+  "materials": [
+    "4mm natural cotton cord (150m)",
+    "Wooden dowel for working",
+    "Scissors",
+    "Measuring tape"
+  ],
+  "steps": [
+    {
+      "title": "Plan dimensions",
+      "description": "Measure your table and plan for a runner about 1/3 the table width."
+    },
+    {
+      "title": "Cut and mount",
+      "description": "Cut 40 cords at 5 times your desired length and mount on a temporary dowel."
+    },
+    {
+      "title": "Create body",
+      "description": "Work alternating square knot patterns with decorative diamond shapes throughout."
+    },
+    {
+      "title": "Finish both ends",
+      "description": "Remove from dowel, finish the starting end to match, and create matching fringes."
+    }
+  ],
+  "tips": [
+    "Work the pattern from both ends toward the center for symmetry",
+    "Consider adding wooden or clay beads as accents"
+  ]
+}

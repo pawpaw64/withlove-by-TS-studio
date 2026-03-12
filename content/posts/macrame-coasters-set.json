@@ -1,0 +1,38 @@
+{
+  "slug": "macrame-coasters-set",
+  "title": "Handwoven Macrame Coasters",
+  "excerpt": "Create a beautiful set of macrame coasters that will protect your tables in style.",
+  "category": "home-decor",
+  "date": "2026-03-11",
+  "image": "/uploads/macrame-coasters.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "1 hour per coaster",
+  "materials": [
+    "3mm cotton cord",
+    "Scissors",
+    "Tape",
+    "Cork backing (optional)"
+  ],
+  "steps": [
+    {
+      "title": "Cut cords",
+      "description": "Cut 8 pieces of cord, each 60cm long for one coaster."
+    },
+    {
+      "title": "Start center",
+      "description": "Cross 4 cords over 4 others and begin weaving in a circular pattern."
+    },
+    {
+      "title": "Continue spiral",
+      "description": "Use half hitch knots to spiral outward until you reach desired size."
+    },
+    {
+      "title": "Finish edges",
+      "description": "Tuck ends under or trim close and seal with fabric glue."
+    }
+  ],
+  "tips": [
+    "Make a set of 4-6 for a complete gift set",
+    "Add cork backing for extra table protection"
+  ]
+}

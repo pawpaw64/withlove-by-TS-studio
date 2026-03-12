@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-sunburst-mirror",
+  "title": "Sunburst Macrame Mirror",
+  "excerpt": "Create a stunning sunburst-style mirror that will be the focal point of any room.",
+  "category": "mirror",
+  "date": "2026-03-04",
+  "image": "/uploads/macrame-sunburst-mirror.jpg",
+  "difficulty": "Advanced",
+  "timeEstimate": "5-6 hours",
+  "materials": [
+    "Round mirror",
+    "3mm and 5mm cotton cord",
+    "Embroidery hoop",
+    "Hot glue gun",
+    "Wooden beads"
+  ],
+  "steps": [
+    {
+      "title": "Create inner ring",
+      "description": "Wrap the embroidery hoop with thin cord and attach the mirror in the center."
+    },
+    {
+      "title": "Add ray cords",
+      "description": "Cut varying lengths of cord and attach around the hoop pointing outward."
+    },
+    {
+      "title": "Decorate rays",
+      "description": "Add knots and wooden beads at different points along the rays for visual interest."
+    },
+    {
+      "title": "Shape and finish",
+      "description": "Arrange rays in a pleasing sunburst pattern and trim ends at varying lengths."
+    }
+  ],
+  "tips": [
+    "Odd numbers of rays look more natural",
+    "Mix cord thicknesses for added texture"
+  ]
+}

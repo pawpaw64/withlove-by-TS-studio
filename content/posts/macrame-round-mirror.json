@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-round-mirror",
+  "title": "Boho Round Macrame Mirror",
+  "excerpt": "Transform a simple round mirror into a stunning bohemian statement piece.",
+  "category": "mirror",
+  "date": "2026-03-10",
+  "image": "/uploads/macrame-round-mirror.jpg",
+  "difficulty": "Intermediate",
+  "timeEstimate": "3-4 hours",
+  "materials": [
+    "Round mirror (20-30cm)",
+    "4mm cotton cord (50m)",
+    "Metal ring slightly larger than mirror",
+    "Strong glue",
+    "Scissors"
+  ],
+  "steps": [
+    {
+      "title": "Prepare the base",
+      "description": "Glue the mirror to the center back of the metal ring and let dry completely."
+    },
+    {
+      "title": "Attach cords",
+      "description": "Cut 30-40 cords and attach around the ring using lark's head knots."
+    },
+    {
+      "title": "Create the frame",
+      "description": "Work 2-3 rows of square knots around the mirror, spacing evenly."
+    },
+    {
+      "title": "Finish with fringe",
+      "description": "Trim cords to desired length, unravel, and brush out for a soft fringe effect."
+    }
+  ],
+  "tips": [
+    "Use a template to ensure even spacing of knots",
+    "Consider adding a second smaller ring for a layered look"
+  ]
+}

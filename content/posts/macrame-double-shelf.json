@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-double-shelf",
+  "title": "Double-Tier Macrame Wall Shelf",
+  "excerpt": "Maximize your wall space with this stylish two-tiered macrame shelf unit.",
+  "category": "shelf",
+  "date": "2026-03-02",
+  "image": "/uploads/macrame-double-shelf.jpg",
+  "difficulty": "Advanced",
+  "timeEstimate": "5-6 hours",
+  "materials": [
+    "6mm cotton rope (50m)",
+    "2 wooden boards (same size)",
+    "Drill",
+    "Large wooden dowel",
+    "Wood stain (optional)"
+  ],
+  "steps": [
+    {
+      "title": "Prepare materials",
+      "description": "Sand both boards, drill corner holes, and optionally stain to match."
+    },
+    {
+      "title": "Mount on dowel",
+      "description": "Attach 8 long cords to the dowel using lark's head knots."
+    },
+    {
+      "title": "Create first tier",
+      "description": "Add decorative knotting, then thread cords through the first shelf and secure."
+    },
+    {
+      "title": "Add second tier",
+      "description": "Continue the pattern, add the second shelf, and finish with decorative elements."
+    }
+  ],
+  "tips": [
+    "Space shelves 25-30cm apart for versatile storage",
+    "Ensure wall mounting is into studs for heavier items"
+  ]
+}

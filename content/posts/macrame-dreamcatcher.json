@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-wall-hanging",
+  "title": "Bohemian Macrame wall hanging",
+  "excerpt": "Combine traditional wall hanging design with macrame techniques for beautiful wall art.",
+  "category": "wall-Arts",
+  "date": "2026-03-01",
+  "image": "/uploads/macrame-wall-hanging.jpg",
+  "difficulty": "Intermediate",
+  "timeEstimate": "4-5 hours",
+  "materials": [
+    "Metal or wooden hoop (20-30cm)",
+    "4mm cotton cord (40m)",
+    "Lace doily or crochet piece",
+    "Feathers and beads",
+    "Scissors"
+  ],
+  "steps": [
+    {
+      "title": "Wrap the hoop",
+      "description": "Completely wrap your hoop with cord, securing ends with glue."
+    },
+    {
+      "title": "Create the web",
+      "description": "Attach a lace doily in the center or weave a web pattern with thin cord."
+    },
+    {
+      "title": "Add macrame elements",
+      "description": "Attach cords at the bottom and create hanging elements with knots and fringe."
+    },
+    {
+      "title": "Decorate",
+      "description": "Add feathers, beads, and additional macrame details to complete the piece."
+    }
+  ],
+  "tips": [
+    "Vintage doilies from thrift stores make beautiful centerpieces",
+    "Create macrame feathers to use instead of real ones"
+  ]
+}

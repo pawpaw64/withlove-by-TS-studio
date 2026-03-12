@@ -1,0 +1,39 @@
+{
+  "slug": "macrame-hanging-planter",
+  "title": "Classic Macrame Hanging Planter",
+  "excerpt": "The quintessential macrame project - a beautiful hanging planter for your indoor plants.",
+  "category": "plant-hanger",
+  "date": "2026-03-11",
+  "image": "/uploads/macrame-hanging-planter.jpg",
+  "difficulty": "Beginner",
+  "timeEstimate": "2-3 hours",
+  "materials": [
+    "5mm cotton rope (25m)",
+    "Wooden ring or metal hoop",
+    "Scissors",
+    "Measuring tape",
+    "6-inch pot"
+  ],
+  "steps": [
+    {
+      "title": "Cut and attach",
+      "description": "Cut 8 cords about 3m each. Fold in half and attach to ring with lark's head knots."
+    },
+    {
+      "title": "Create top section",
+      "description": "Divide into 4 groups of 4 cords and make spiral knots for about 15cm."
+    },
+    {
+      "title": "Form the basket",
+      "description": "Create a net pattern using square knots, alternating cords between groups."
+    },
+    {
+      "title": "Gather and finish",
+      "description": "Bring all cords together with a large gathering knot and trim the tassel."
+    }
+  ],
+  "tips": [
+    "Test with your pot before finishing to ensure proper fit",
+    "Use a heavier cord for larger, heavier pots"
+  ]
+}
