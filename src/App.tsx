@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -6,6 +8,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import Gallery from "./pages/Gallery.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
+
 import About from "./pages/About.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
 import Tutorials from "./pages/Tutorials.tsx";
@@ -30,6 +33,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </TooltipProvider>
   </QueryClientProvider>
 );
