@@ -34,5 +34,18 @@
   "tips": [
     "Keep consistent tension for an even spiral",
     "Try different colored cords for a two-tone effect"
+  ],
+
+  "videoTutorials": [
+    {
+      "title": " Macrame Diamond Keychain DIY (Easy Tutorial for Beginners!",
+      "youtubeUrl": "https://www.youtube.com/watch?v=6aPIKWGN8aU"
+    }
+  ],
+  "galleryImages": [
+    "/uploads/k1.jpg",
+    "/uploads/k2.jpg",
+    "/uploads/k3.jpg",
+    "/uploads/k4.jpg"
   ]
 }

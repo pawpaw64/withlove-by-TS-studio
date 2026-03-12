@@ -35,5 +35,18 @@
   "tips": [
     "Stain or paint the wood to match your decor",
     "Add multiple shelves for a tiered look"
-  ]
+  ],
+  
+  "videoTutorials": [
+    {
+      "title": "DIY Hanging Macramé SHELF Plant Hanger Tutorial",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gbMT9x8wqOk"
+    }
+  ],
+    "galleryImages": [
+        "/uploads/se1.jpg",
+        "/uploads/se2.jpg",
+        "/uploads/se3.jpg",
+        "/uploads/se4.jpg"
+     ]
 }

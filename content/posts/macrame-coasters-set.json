@@ -34,5 +34,16 @@
   "tips": [
     "Make a set of 4-6 for a complete gift set",
     "Add cork backing for extra table protection"
+  ],
+  
+  "videoTutorials": [
+    {
+      "title": "DIY Macramé Coaster",
+      "youtubeUrl": "https://www.youtube.com/watch?v=8Y417UNLomM"
+    }
+  ],"galleryImages": [
+    "/uploads/co1.jpg",
+    "/uploads/co3.jpg",
+    "/uploads/co3.jpg"
   ]
 }

@@ -35,5 +35,17 @@
   "tips": [
     "Space shelves 25-30cm apart for versatile storage",
     "Ensure wall mounting is into studs for heavier items"
-  ]
+  ],
+  
+  "videoTutorials": [
+    {
+      "title": "DIY Hanging Macramé SHELF Plant Hanger Tutorial",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gbMT9x8wqOk"
+    }
+  ],
+    "galleryImages": [
+        "/uploads/s1.jpg",
+        "/uploads/s2.jpg",
+        "/uploads/s3.jpg"
+     ]
 }

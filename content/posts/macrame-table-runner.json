@@ -35,4 +35,16 @@
     "Work the pattern from both ends toward the center for symmetry",
     "Consider adding wooden or clay beads as accents"
   ]
+  ,
+  
+  "videoTutorials": [
+    {
+      "title": "DIY Macramé table Runner Tutorial",
+      "youtubeUrl": "https://www.youtube.com/watch?v=QMpq3EAAxsE "}
+  ],
+    "galleryImages": [
+        "/uploads/r1.jpg",
+        "/uploads/r2.jpg",
+        "/uploads/r3.jpg"
+     ]
 }

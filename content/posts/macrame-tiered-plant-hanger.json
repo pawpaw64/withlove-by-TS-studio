@@ -34,5 +34,17 @@
   "tips": [
     "Use smaller pots on top, larger on bottom for visual balance",
     "Ensure mounting hardware can support the weight of both plants when watered"
-  ]
+  ],
+  
+  "videoTutorials": [
+    {
+      "title": "DIY Hanging Macramé SHELF Plant Hanger Tutorial",
+      "youtubeUrl": "https://www.youtube.com/watch?v=gbMT9x8wqOk"
+    }
+  ],
+    "galleryImages": [
+        "/uploads/s1.jpg",
+        "/uploads/s2.jpg",
+        "/uploads/s3.jpg"
+     ]
 }
