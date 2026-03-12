@@ -198,7 +198,7 @@ const Header = () => {
     <>
       <header className="sticky top-0 z-50 bg-background/70 backdrop-blur-md border-b border-border/40">
         <div className="container mx-auto flex items-center justify-between py-3 px-4">
-          <div className="w-24 md:w-32" />
+          <div className="hidden md:block w-32" />
 
           <nav className="hidden md:flex items-center gap-8 bg-secondary/30 px-6 py-2 rounded-full backdrop-blur-sm border border-border/20">
             {navLinks.map((link) => (
@@ -218,10 +218,10 @@ const Header = () => {
             </button>
           </nav>
 
-          <div className="w-24 md:w-32" />
+          <div className="hidden md:block w-32" />
 
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground ml-auto"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
