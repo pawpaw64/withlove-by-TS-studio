@@ -3,7 +3,7 @@
   "title": "Boho Macrame Door Curtain",
   "excerpt": "Transform your doorway with this beautiful bohemian-style macrame curtain.",
   "category": "curtain",
-  "date": "2026-03-09",
+  "date": "2026-03-09T00:00:00.000Z",
   "image": "/uploads/macrame-door-curtain.jpg",
   "difficulty": "Intermediate",
   "timeEstimate": "6-8 hours",
@@ -35,5 +35,18 @@
   "tips": [
     "Work in sections to keep the pattern consistent",
     "Hang the dowel at working height before starting"
-  ]
+  ],
+  "videoTutorials": [
+    {
+      "title": " Simple Macrame Curtain | Easy for Beginners 3ft x 5ft | DIY Curtain | Large Macrame Wall Hanging",
+      "youtubeUrl": "https://www.youtube.com/watch?v=d9Ed4MXrap8"
+    }
+  ],
+  "galleryImages": [
+    "/uploads/SmartSelect_20240604_221122_Facebook.jpg",
+    "/uploads/SmartSelect_20240604_221139_Facebook.jpg",
+    "/uploads/SmartSelect_20240604_221926_Facebook.jpg",
+    "/uploads/SmartSelect_20240604_222814_Facebook.jpg"
+  ],
+  "body": ""
 }

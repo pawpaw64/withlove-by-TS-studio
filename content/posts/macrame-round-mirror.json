@@ -3,7 +3,7 @@
   "title": "Boho Round Macrame Mirror",
   "excerpt": "Transform a simple round mirror into a stunning bohemian statement piece.",
   "category": "mirror",
-  "date": "2026-03-10",
+  "date": "2026-03-10T00:00:00.000Z",
   "image": "/uploads/macrame-round-mirror.jpg",
   "difficulty": "Intermediate",
   "timeEstimate": "3-4 hours",
@@ -35,5 +35,15 @@
   "tips": [
     "Use a template to ensure even spacing of knots",
     "Consider adding a second smaller ring for a layered look"
-  ]
+  ],
+  "videoTutorials": [
+    {
+      "title": " DIY Macrame Mirror Tutorial for beginners | Macrame Series Pt-1 | DIYwithPragya",
+      "youtubeUrl": "https://www.youtube.com/watch?v=70iS_Y7RaTU"
+    }
+  ],
+  "galleryImages": [
+    "/uploads/472478650_917334367140977_2998246636229872834_n.jpg"
+  ],
+  "body": ""
 }

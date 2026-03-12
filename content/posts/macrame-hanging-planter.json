@@ -3,7 +3,7 @@
   "title": "Classic Macrame Hanging Planter",
   "excerpt": "The quintessential macrame project - a beautiful hanging planter for your indoor plants.",
   "category": "plant-hanger",
-  "date": "2026-03-11",
+  "date": "2026-03-11T00:00:00.000Z",
   "image": "/uploads/macrame-hanging-planter.jpg",
   "difficulty": "Beginner",
   "timeEstimate": "2-3 hours",
@@ -35,5 +35,16 @@
   "tips": [
     "Test with your pot before finishing to ensure proper fit",
     "Use a heavier cord for larger, heavier pots"
-  ]
+  ],
+  "videoTutorials": [
+    {
+      "title": " DIY macrame plant hanger tutorial | make a plant hanger without wooden hoop | boho plant decor",
+      "youtubeUrl": "https://www.youtube.com/watch?v=2lqM8GMm8fo&t=12s"
+    }
+  ],
+  "galleryImages": [
+    "/uploads/SmartSelect_20240604_220344_Facebook - Copy.jpg",
+    "/uploads/SmartSelect_20240604_214650_Facebook.jpg"
+  ],
+  "body": ""
 }
