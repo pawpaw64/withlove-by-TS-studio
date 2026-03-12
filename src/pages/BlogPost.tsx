@@ -172,199 +172,349 @@ const BlogPost = () => {
         <div className="container mx-auto px-4 py-12 max-w-6xl">
          <div className={galleryImages.length > 0 ? "flex flex-col lg:flex-row gap-8" : ""}>
           {/* Main content */}
-          <div className={galleryImages.length > 0 ? "flex-1 min-w-0" : "max-w-4xl mx-auto w-full"}>
-          {/* Difficulty & Time badges */}
-          {(post.difficulty || post.timeEstimate) && (
-            <div className="flex flex-wrap gap-3 mb-8">
-              {post.difficulty && (
-                <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-medium" style={{ background: "hsl(var(--bp-card))", color: "hsl(var(--bp-accent-strong))", border: "1.5px solid hsl(var(--bp-border))" }}>
-                  <BarChart3 size={15} /> {post.difficulty}
-                </span>
-              )}
-              {post.timeEstimate && (
-                <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-medium" style={{ background: "hsl(var(--bp-card))", color: "hsl(var(--bp-accent-strong))", border: "1.5px solid hsl(var(--bp-border))" }}>
-                  <Clock size={15} /> {post.timeEstimate}
-                </span>
-              )}
-            </div>
-          )}
+  {/* Main content */}
+<div className={galleryImages.length > 0 ? "flex-1 min-w-0" : "max-w-4xl mx-auto w-full"}>
 
-          {/* Intro */}
-          {intro.children.length > 0 && (
-            <div className="prose prose-lg max-w-none font-body mb-10 prose-headings:font-display" style={{ color: "hsl(var(--bp-muted))" }}>
-              <TinaMarkdown content={intro as Parameters<typeof TinaMarkdown>[0]["content"]} />
-            </div>
-          )}
+  {/* Hero section - Title & metadata already above */}
 
-          {/* Materials */}
-          {post.materials && post.materials.length > 0 && (
-            <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
-              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
-                <Wrench size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Materials Needed
-              </h3>
-              <ul className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>
-                {post.materials.map((m, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(var(--bp-accent-strong))" }} />
-                    {m}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+  {/* Quick Overview - Difficulty & Time badges */}
+  {(post.difficulty || post.timeEstimate) && (
+    <div className="flex flex-wrap gap-3 mb-8">
+      {post.difficulty && (
+        <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-medium" style={{ background: "hsl(var(--bp-card))", color: "hsl(var(--bp-accent-strong))", border: "1.5px solid hsl(var(--bp-border))" }}>
+          <BarChart3 size={15} /> {post.difficulty}
+        </span>
+      )}
+      {post.timeEstimate && (
+        <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-body font-medium" style={{ background: "hsl(var(--bp-card))", color: "hsl(var(--bp-accent-strong))", border: "1.5px solid hsl(var(--bp-border))" }}>
+          <Clock size={15} /> {post.timeEstimate}
+        </span>
+      )}
+    </div>
+  )}
 
-          {/* Tutorial Steps */}
-          {post.steps && post.steps.length > 0 && (
-            <div className="mb-8">
-              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-5" style={{ color: "hsl(var(--bp-fg))" }}>
-                <ListOrdered size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Step-by-Step Tutorial
-              </h3>
-              <div className="space-y-5">
-                {post.steps.map((step, i) => (
-                  <div key={i} className="rounded-2xl p-5 flex gap-4" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full shrink-0 text-sm font-bold text-white" style={{ background: "hsl(var(--bp-accent-strong))" }}>
-                      {i + 1}
-                    </span>
-                    <div className="flex-1">
-                      <h4 className="font-display font-semibold mb-1" style={{ color: "hsl(var(--bp-fg))" }}>{step.title}</h4>
-                      <p className="font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>{step.description}</p>
-                      {step.image && (
-                        <img src={step.image} alt={step.title} className="mt-3 rounded-xl w-full max-h-64 object-cover" />
-                      )}
-                    </div>
-                  </div>
-                ))}
+  {/* Introduction - Set the context */}
+  {intro.children.length > 0 && (
+    <div className="prose prose-lg max-w-none font-body mb-10 prose-headings:font-display" style={{ color: "hsl(var(--bp-muted))" }}>
+      <TinaMarkdown content={intro as Parameters<typeof TinaMarkdown>[0]["content"]} />
+    </div>
+  )}
+
+  {/* Quick Summary Card - What you'll learn/make */}
+  {post.excerpt && (
+    <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-accent) / 0.1)", border: "1.5px solid hsl(var(--bp-border))" }}>
+      <p className="font-body text-lg italic" style={{ color: "hsl(var(--bp-fg))" }}>
+        "{post.excerpt}"
+      </p>
+    </div>
+  )}
+
+  {/* Materials - What you need before starting */}
+  {post.materials && post.materials.length > 0 && (
+    <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
+      <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+        <Wrench size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Materials Needed
+      </h3>
+      <ul className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>
+        {post.materials.map((m, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(var(--bp-accent-strong))" }} />
+            {m}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {/* Video Tutorials - Watch first if available */}
+  {post.videoTutorials && post.videoTutorials.length > 0 && (
+    <div className="mb-8">
+      <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-5" style={{ color: "hsl(var(--bp-fg))" }}>
+        <Play size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Video Tutorials
+      </h3>
+      <div className="grid gap-5">
+        {post.videoTutorials.map((vid, i) => {
+          const videoId = extractYouTubeId(vid.youtubeUrl);
+          if (!videoId) return null;
+          return (
+            <div key={i} className="rounded-2xl overflow-hidden" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
+              <div className="aspect-video">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+                  title={vid.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
               </div>
+              <p className="px-5 py-3 font-display font-semibold text-sm" style={{ color: "hsl(var(--bp-fg))" }}>{vid.title}</p>
             </div>
-          )}
+          );
+        })}
+      </div>
+    </div>
+  )}
 
-          {/* Tips */}
-          {post.tips && post.tips.length > 0 && (
-            <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-accent) / 0.15)", border: "1.5px solid hsl(var(--bp-border))" }}>
-              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
-                <Lightbulb size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Tips & Tricks
-              </h3>
-              <ul className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>
-                {post.tips.map((tip, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(var(--bp-accent-strong))" }} />
-                    {tip}
-                  </li>
-                ))}
-              </ul>
+  {/* Main Tutorial Steps - The core content */}
+  {post.steps && post.steps.length > 0 && (
+    <div className="mb-8">
+      <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-5" style={{ color: "hsl(var(--bp-fg))" }}>
+        <ListOrdered size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Step-by-Step Tutorial
+      </h3>
+      <div className="space-y-5">
+        {post.steps.map((step, i) => (
+          <div key={i} className="rounded-2xl p-5 flex gap-4" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
+            <span className="flex items-center justify-center w-8 h-8 rounded-full shrink-0 text-sm font-bold text-white" style={{ background: "hsl(var(--bp-accent-strong))" }}>
+              {i + 1}
+            </span>
+            <div className="flex-1">
+              <h4 className="font-display font-semibold mb-1" style={{ color: "hsl(var(--bp-fg))" }}>{step.title}</h4>
+              <p className="font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>{step.description}</p>
+              {step.image && (
+                <img src={step.image} alt={step.title} className="mt-3 rounded-xl w-full max-h-64 object-cover" />
+              )}
             </div>
-          )}
-
-          {/* Video Tutorials */}
-          {post.videoTutorials && post.videoTutorials.length > 0 && (
-            <div className="mb-8">
-              <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-5" style={{ color: "hsl(var(--bp-fg))" }}>
-                <Play size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Video Tutorials
-              </h3>
-              <div className="grid gap-5">
-                {post.videoTutorials.map((vid, i) => {
-                  const videoId = extractYouTubeId(vid.youtubeUrl);
-                  if (!videoId) return null;
-                  return (
-                    <div key={i} className="rounded-2xl overflow-hidden" style={{ background: "hsl(var(--bp-card))", border: "1.5px solid hsl(var(--bp-border))" }}>
-                      <div className="aspect-video">
-                        <iframe
-                          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
-                          title={vid.title}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="w-full h-full"
-                        />
-                      </div>
-                      <p className="px-5 py-3 font-display font-semibold text-sm" style={{ color: "hsl(var(--bp-fg))" }}>{vid.title}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* Sections as expandable cards */}
-          <div className="space-y-4">
-            {sections.map((section, i) => {
-              const isOpen = openSection === i;
-              return (
-                <div
-                  key={i}
-                  className="rounded-2xl overflow-hidden transition-all duration-300"
-                  style={{
-                    background: isOpen ? "hsl(var(--bp-card))" : "hsl(var(--bp-bg))",
-                    border: `1.5px solid hsl(var(--bp-border))`,
-                  }}
-                >
-                  <button
-                    onClick={() => setOpenSection(isOpen ? -1 : i)}
-                    className="w-full flex items-center gap-3 px-6 py-4 text-left transition-colors hover:opacity-90"
-                  >
-                    <span
-                      className="flex items-center justify-center w-10 h-10 rounded-full shrink-0"
-                      style={{ background: "hsl(var(--bp-accent) / 0.35)", color: "hsl(var(--bp-accent-strong))" }}
-                    >
-                      {section.icon}
-                    </span>
-                    <span className="font-display text-lg font-semibold flex-1" style={{ color: "hsl(var(--bp-fg))" }}>
-                      {section.title}
-                    </span>
-                    <span
-                      className="text-xl transition-transform duration-300"
-                      style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)", color: "hsl(var(--bp-accent-strong))" }}
-                    >
-                      +
-                    </span>
-                  </button>
-
-                  <div
-                    className="transition-all duration-300 overflow-hidden"
-                    style={{ maxHeight: isOpen ? "2000px" : "0px", opacity: isOpen ? 1 : 0 }}
-                  >
-                    <div className="px-6 pb-6 prose prose-lg max-w-none font-body prose-headings:font-display prose-strong:font-semibold" style={{ color: "hsl(var(--bp-muted))" }}>
-                      <TinaMarkdown content={section.content as Parameters<typeof TinaMarkdown>[0]["content"]} />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
           </div>
+        ))}
+      </div>
+    </div>
+  )}
 
-          {/* Back link */}
-          <div className="text-center mt-12">
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-body hover:opacity-90 transition-opacity text-white"
-              style={{ background: "hsl(var(--bp-accent-strong))" }}
+  {/* Tips & Tricks - Helpful advice after the tutorial */}
+  {post.tips && post.tips.length > 0 && (
+    <div className="rounded-2xl p-6 mb-8" style={{ background: "hsl(var(--bp-accent) / 0.15)", border: "1.5px solid hsl(var(--bp-border))" }}>
+      <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+        <Lightbulb size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Tips & Tricks
+      </h3>
+      <ul className="space-y-2 font-body text-sm" style={{ color: "hsl(var(--bp-muted))" }}>
+        {post.tips.map((tip, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "hsl(var(--bp-accent-strong))" }} />
+            {tip}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  {/* Additional sections from rich text */}
+  {sections.length > 0 && (
+    <>
+      <h3 className="font-display text-lg font-semibold mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+        Additional Information
+      </h3>
+      <div className="space-y-4">
+        {sections.map((section, i) => {
+          const isOpen = openSection === i;
+          return (
+            <div
+              key={i}
+              className="rounded-2xl overflow-hidden transition-all duration-300"
+              style={{
+                background: isOpen ? "hsl(var(--bp-card))" : "hsl(var(--bp-bg))",
+                border: `1.5px solid hsl(var(--bp-border))`,
+              }}
             >
-              <ArrowLeft size={16} /> Back to All Posts
-            </Link>
-          </div>
-          </div>{/* end main content */}
+              <button
+                onClick={() => setOpenSection(isOpen ? -1 : i)}
+                className="w-full flex items-center gap-3 px-6 py-4 text-left transition-colors hover:opacity-90"
+              >
+                <span
+                  className="flex items-center justify-center w-10 h-10 rounded-full shrink-0"
+                  style={{ background: "hsl(var(--bp-accent) / 0.35)", color: "hsl(var(--bp-accent-strong))" }}
+                >
+                  {section.icon}
+                </span>
+                <span className="font-display text-lg font-semibold flex-1" style={{ color: "hsl(var(--bp-fg))" }}>
+                  {section.title}
+                </span>
+                <span
+                  className="text-xl transition-transform duration-300"
+                  style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)", color: "hsl(var(--bp-accent-strong))" }}
+                >
+                  +
+                </span>
+              </button>
 
-          {/* Side Gallery */}
-          {galleryImages.length > 0 && (
-            <aside className="lg:w-80 xl:w-96 shrink-0">
-              <div className="lg:sticky lg:top-8">
-                <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
-                  <Images size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Gallery
-                </h3>
-                <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
-                  {galleryImages.map((img, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setLightboxIndex(i)}
-                      className="rounded-xl overflow-hidden transition-transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-offset-2"
-                      style={{ border: "1.5px solid hsl(var(--bp-border))", focusRingColor: "hsl(var(--bp-accent-strong))" } as React.CSSProperties}
-                    >
-                      <img src={img} alt={`Gallery image ${i + 1}`} className="w-full aspect-[4/3] object-cover" loading="lazy" />
-                    </button>
-                  ))}
+              <div
+                className="transition-all duration-300 overflow-hidden"
+                style={{ maxHeight: isOpen ? "2000px" : "0px", opacity: isOpen ? 1 : 0 }}
+              >
+                <div className="px-6 pb-6 prose prose-lg max-w-none font-body prose-headings:font-display prose-strong:font-semibold" style={{ color: "hsl(var(--bp-muted))" }}>
+                  <TinaMarkdown content={section.content as Parameters<typeof TinaMarkdown>[0]["content"]} />
                 </div>
               </div>
-            </aside>
-          )}
+            </div>
+          );
+        })}
+      </div>
+    </>
+  )}
+
+  {/* Back link */}
+  <div className="text-center mt-12">
+    <Link
+      to="/"
+      className="inline-flex items-center gap-2 px-8 py-3 rounded-full font-body hover:opacity-90 transition-opacity text-white"
+      style={{ background: "hsl(var(--bp-accent-strong))" }}
+    >
+      <ArrowLeft size={16} /> Back to All Posts
+    </Link>
+  </div>
+</div>{/* end main content */}
+
+{/* Side Gallery with Hover Transitions */}
+{/* Side Gallery with Hover Transitions */}
+{galleryImages.length > 0 && (
+  <aside className="lg:w-80 xl:w-96 shrink-0">
+    <div className="lg:sticky lg:top-8">
+      <h3 className="font-display text-lg font-semibold flex items-center gap-2 mb-4" style={{ color: "hsl(var(--bp-fg))" }}>
+        <Images size={18} style={{ color: "hsl(var(--bp-accent-strong))" }} /> Gallery
+      </h3>
+      
+      {/* Hover-expanding card gallery */}
+      <style>{`
+        .gallery-container {
+          position: relative;
+          height: 400px;
+          width: 100%;
+          overflow: hidden;
+          border-radius: 16px;
+          background: hsl(var(--bp-card));
+        }
+        .gallery-card {
+          position: absolute;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          color: white;
+          z-index: 1;
+          overflow: hidden;
+          background-size: cover;
+          background-position: center;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          border-radius: 12px;
+          cursor: pointer;
+          border: 3px solid hsl(var(--bp-bg));
+        }
+        .gallery-card:hover {
+          z-index: 50;
+          box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+        }
+        .gallery-card.top-left:hover {
+          width: 100% !important;
+          height: 100% !important;
+          top: 0 !important;
+          left: 0 !important;
+          right: auto !important;
+          bottom: auto !important;
+          border-radius: 16px;
+        }
+        .gallery-card.top-right:hover {
+          width: 100% !important;
+          height: 100% !important;
+          top: 0 !important;
+          right: 0 !important;
+          left: auto !important;
+          bottom: auto !important;
+          border-radius: 16px;
+        }
+        .gallery-card.bottom-left:hover {
+          width: 100% !important;
+          height: 100% !important;
+          bottom: 0 !important;
+          left: 0 !important;
+          top: auto !important;
+          right: auto !important;
+          border-radius: 16px;
+        }
+        .gallery-card.bottom-right:hover {
+          width: 100% !important;
+          height: 100% !important;
+          bottom: 0 !important;
+          right: 0 !important;
+          top: auto !important;
+          left: auto !important;
+          border-radius: 16px;
+        }
+        .gallery-card-content {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          padding: 1rem;
+          background: linear-gradient(to top, hsl(var(--bp-accent-strong) / 0.9), transparent);
+          transition: all 0.3s ease;
+          opacity: 0;
+          transform: translateY(100%);
+        }
+        .gallery-card:hover .gallery-card-content {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
+      
+      <div className="gallery-container" style={{ border: "1.5px solid hsl(var(--bp-border))" }}>
+        {galleryImages.slice(0, 4).map((img, i) => {
+          // Position cards in a 2x2 grid pattern with specific corner classes
+          const positions = [
+            { top: 0, left: 0, width: "65%", height: "55%", corner: "top-left" },
+            { top: 0, right: 0, width: "33%", height: "45%", corner: "top-right" },
+            { bottom: 0, left: 0, width: "45%", height: "43%", corner: "bottom-left" },
+            { bottom: 0, right: 0, width: "53%", height: "53%", corner: "bottom-right" },
+          ];
+          const pos = positions[i] || positions[0];
+          
+          return (
+            <button
+              key={i}
+              onClick={() => setLightboxIndex(i)}
+              className={`gallery-card ${pos.corner}`}
+              style={{
+                backgroundImage: `url(${img})`,
+                width: pos.width,
+                height: pos.height,
+                top: pos.top !== undefined ? pos.top : "auto",
+                left: pos.left !== undefined ? pos.left : "auto",
+                right: pos.right !== undefined ? pos.right : "auto",
+                bottom: pos.bottom !== undefined ? pos.bottom : "auto",
+              }}
+              aria-label={`View gallery image ${i + 1}`}
+            >
+              <div className="gallery-card-content">
+                <span className="text-xs font-body font-medium">Image {i + 1}</span>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Show remaining images in a smaller grid below */}
+      {galleryImages.length > 4 && (
+        <div className="grid grid-cols-4 gap-2 mt-3">
+          {galleryImages.slice(4).map((img, i) => (
+            <button
+              key={i + 4}
+              onClick={() => setLightboxIndex(i + 4)}
+              className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 focus:outline-none focus:ring-2"
+              style={{ 
+                border: "2px solid hsl(var(--bp-border))",
+              }}
+            >
+              <img 
+                src={img} 
+                alt={`Gallery image ${i + 5}`} 
+                className="w-full h-full object-cover" 
+                loading="lazy" 
+              />
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  </aside>
+)}
          </div>{/* end flex row */}
         </div>
 
