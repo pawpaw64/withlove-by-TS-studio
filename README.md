@@ -17,7 +17,8 @@ npm i
 npm run dev
 ```
 
-## What technologies are used for this project?
+## Visit the website 
+https://withlove-by-ts-studio.vercel.app/
 
 This project is built with:
 
