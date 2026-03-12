@@ -7,7 +7,7 @@ import type { SocialLink } from "@/hooks/useSiteSettings";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Tutorials", href: "/#posts" },
+  { label: "Tutorials", href: "/tutorials" },
   { label: "Gallery", href: "/gallery" },
 ];
 

@@ -362,8 +362,6 @@ const BlogPost = () => {
     </Link>
   </div>
 </div>{/* end main content */}
-
-{/* Side Gallery with Hover Transitions */}
 {/* Side Gallery with Hover Transitions */}
 {galleryImages.length > 0 && (
   <aside className="lg:w-80 xl:w-96 shrink-0">
@@ -380,7 +378,6 @@ const BlogPost = () => {
           width: 100%;
           overflow: hidden;
           border-radius: 16px;
-          background: hsl(var(--bp-card));
         }
         .gallery-card {
           position: absolute;
@@ -455,7 +452,7 @@ const BlogPost = () => {
         }
       `}</style>
       
-      <div className="gallery-container" style={{ border: "1.5px solid hsl(var(--bp-border))" }}>
+      <div className="gallery-container">
         {galleryImages.slice(0, 4).map((img, i) => {
           // Position cards in a 2x2 grid pattern with specific corner classes
           const positions = [
