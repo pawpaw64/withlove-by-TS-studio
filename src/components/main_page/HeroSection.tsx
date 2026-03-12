@@ -18,7 +18,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       />
       
-      <div className="relative container mx-auto ppy-16 md:py-20 text-center">
+      <div className="relative container mx-auto py-12 md:py-20 px-4 text-center">
         {/* Decorative knot icon above title */}
         <div className="flex justify-center mb-6 animate-fade-in">
           <div className="relative">
