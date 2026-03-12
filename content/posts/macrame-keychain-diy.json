@@ -1,9 +1,9 @@
 {
   "slug": "macrame-keychain-diy",
-  "title": "DIY Macrame Keychain Tutorial",
+  "title": "DIY Macrame Keychain ",
   "excerpt": "Learn how to create a beautiful handmade macrame keychain perfect for gifts or personal use.",
   "category": "accessories",
-  "date": "2026-03-10",
+  "date": "2026-03-10T00:00:00.000Z",
   "image": "/uploads/macrame-keychain.jpg",
   "difficulty": "Beginner",
   "timeEstimate": "30 minutes",
@@ -34,5 +34,12 @@
   "tips": [
     "Use a clipboard to hold the keyring while working",
     "Add beads between knots for extra decoration"
-  ]
+  ],
+  "videoTutorials": [
+    {
+      "title": " Macrame Keychain TUTORIAL#1 | DIY Keychain for beginners | Easy pattern STEP BY STEP | WeaveyStudio",
+      "youtubeUrl": "https://www.youtube.com/watch?v=VNm3e512r_k"
+    }
+  ],
+  "body": ""
 }
