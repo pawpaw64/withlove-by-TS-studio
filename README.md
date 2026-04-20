@@ -198,7 +198,7 @@ cp .env.example .env
 
 | Variable | Description |
 |---|---|
-| `NEXT_PUBLIC_TINA_CLIENT_ID` | Client ID from your TinaCMS Cloud project |
+| `NEXT_PUBLIC_TINA_CLIENT_ID` | Client ID from your TinaCMS Cloud project (TinaCMS uses this name by convention, even in non-Next.js projects) |
 | `TINA_TOKEN` | Read-only content token from TinaCMS Cloud |
 | `TINA_BRANCH` | Git branch TinaCMS should track (default: `main`) |
 
